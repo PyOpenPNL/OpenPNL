@@ -18,7 +18,7 @@
 
 PNL_BEGIN
 
-typedef enum  /* enum of allowed model types */
+typedef enum _EModelTypes  /* enum of allowed model types */
 {   mtMNet
 ,   mtMRF2
 ,   mtBNet

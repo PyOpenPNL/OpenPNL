@@ -22,7 +22,7 @@
 #ifndef __PNLCONFIG_H__
 #include "pnlConfig.h"
 #endif
-
+#include <string.h>
 PNL_BEGIN
 
 // FORWARDS

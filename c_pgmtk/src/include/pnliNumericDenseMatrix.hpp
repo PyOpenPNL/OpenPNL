@@ -1197,7 +1197,7 @@ CMatrix<T> *iCNumericDenseMatrix<T>::Marg_plain( int const *dims_to_keep,
     PNL_DEFINE_AUTOBUF( bool, mask, PNL_MULTIDMATRIX_EXPECTED_MAX_DIM );
 
     GetRanges( &src_num_dims, &src_ranges );
-    GetRawData( &safe_bulk_size, &src_bulk );
+    this->GetRawData( &safe_bulk_size, &src_bulk );
 
     switch ( marg_type )
     {
@@ -1774,7 +1774,7 @@ CMatrix<T> *iCNumericDenseMatrix<T>::FixDims( int const *dims_to_fix,
     PNL_DEFINE_AUTOBUF( int, idx, PNL_MULTIDMATRIX_EXPECTED_MAX_DIM );
 
     GetRanges( &num_dims, &src_ranges );
-    GetRawData( &safe_bulk_size, &src_bulk );
+    this->GetRawData( &safe_bulk_size, &src_bulk );
 
     PNL_DEMAND_AUTOBUF( mask, num_dims );
     PNL_DEMAND_AUTOSTACK( dims_to_trail, num_dims - num_dims_to_fix );
@@ -2307,7 +2307,7 @@ void iCNumericDenseMatrix< T >::MultiplyInSelf_plain( CMatrix< T > const *mat,
     {
         PNL_THROW( CInvalidOperation, "can multiply only by all dims of small matrix" );
     }
-    GetRawData( &big_bulk_size, (T const **)&big_bulk );
+    this->GetRawData( &big_bulk_size, (T const **)&big_bulk );
     ((iCNumericDenseMatrix< T > *)mat)->GetRawData( &smal_bulk_size, &smal_bulk );
 
     PNL_DEMAND_AUTOBUF( corr, big_num_dims );
@@ -2844,7 +2844,7 @@ void iCNumericDenseMatrix<Type>::DivideInSelf(
     //create storage to keep result
     int ResultSize = 0;
     const Type *pBigData;
-    GetRawData( &ResultSize, &pBigData );
+    this->GetRawData( &ResultSize, &pBigData );
 
     int NSmallLength = 0;
     const Type *pSmallData;
@@ -2909,7 +2909,7 @@ void iCNumericDenseMatrix<Type>::DivideInSelf(
         }
     }
 
-    SetData( &pResultData.front() );
+    this->SetData( &pResultData.front() );
 }
 
 template <class Type>
@@ -2920,7 +2920,7 @@ void iCNumericDenseMatrix<Type>::GetIndicesOfMaxValue( intVector* indices)
     PNL_CHECK_IS_NULL_POINTER( indices );
 
     int length; const Type * data;
-    GetRawData( &length, &data);
+    this->GetRawData( &length, &data);
     int nDims; const int *ranges;
     GetRanges( &nDims, & ranges);
     indices->assign( nDims, 0 );
@@ -3045,7 +3045,7 @@ void pnl::iCNumericDenseMatrix< T >::SumInSelf(
     PNL_THROW(CInvalidOperation, 
       "can multiply only by all dims of small matrix");
   }
-  GetRawData(&big_bulk_size, (T const **)&big_bulk);
+  this->GetRawData(&big_bulk_size, (T const **)&big_bulk);
   ((iCNumericDenseMatrix< T > *)mat)->GetRawData(&dst_bulk_size, &dst_bulk);
 
   const int MAX_SIZE = 100;

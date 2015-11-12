@@ -587,7 +587,7 @@ void iCNumericSparseMatrix<Type>::MultiplyInSelf(
         {
             //the matrix is matrix of zeros as it was befor
             ClearData();
-            SetDefaultVal(Type(0));
+            this->SetDefaultVal(Type(0));
         }
     }
     else

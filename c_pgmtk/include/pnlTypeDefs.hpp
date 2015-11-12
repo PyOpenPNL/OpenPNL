@@ -38,7 +38,7 @@ enum EAccumType
     PNL_ACCUM_TYPE_MUL = 4
 };
 
-typedef enum
+typedef enum _EMaximizingMethod
 {
   mmGradient,    // gradient method
   mmHessian,     // method with Hessian usage

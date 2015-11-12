@@ -1,4 +1,4 @@
-#define NEW_TOKENS
+//#define NEW_TOKENS
 #ifdef NEW_TOKENS
 #error switch to new tokens!
 #else

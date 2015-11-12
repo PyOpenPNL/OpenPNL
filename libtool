@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 # libtoolT - Provide generalized library-building support services.
 # Generated automatically by  (GNU pnl 0.2.23)
@@ -44,10 +44,10 @@ available_tags=" CXX F77"
 
 # ### BEGIN LIBTOOL CONFIG
 
-# Libtool was configured on host localhost.localdomain:
+# Libtool was configured on host oshmbp:
 
 # Shell to use when invoking shell scripts.
-SHELL="/bin/sh"
+SHELL="/bin/bash"
 
 # Whether or not to build shared libraries.
 build_libtool_libs=yes
@@ -66,7 +66,7 @@ fast_install=yes
 
 # The host system.
 host_alias=
-host=i686-pc-linux-gnu
+host=x86_64-unknown-linux-gnu
 
 # An echo program that does not interpret backslashes.
 echo="echo"
@@ -88,7 +88,7 @@ with_gcc=yes
 EGREP="grep -E"
 
 # The linker used to build libraries.
-LD="/usr/bin/ld"
+LD="/usr/bin/ld -m elf_x86_64"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
@@ -165,7 +165,7 @@ dlopen_self_static=unknown
 link_static_flag="-static"
 
 # Compiler flag to turn off builtin functions.
-no_builtin_flag=" -fno-builtin -fno-rtti -fno-exceptions"
+no_builtin_flag=" -fno-builtin"
 
 # Compiler flag to allow reflexive dlopens.
 export_dynamic_flag_spec="\${wl}--export-dynamic"
@@ -316,16 +316,18 @@ variables_saved_for_relink="PATH  LD_RUN_PATH GCC_EXEC_PREFIX COMPILER_PATH LIBR
 link_all_deplibs=unknown
 
 # Compile-time system search path for libraries
-sys_lib_search_path_spec=" /usr/lib/gcc-lib/i386-redhat-linux/2.96/ /usr/lib/gcc/i386-redhat-linux/2.96/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../../i386-redhat-linux/lib/i386-redhat-linux/2.96/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../../i386-redhat-linux/lib/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../i386-redhat-linux/2.96/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../ /lib/i386-redhat-linux/2.96/ /lib/ /usr/lib/i386-redhat-linux/2.96/ /usr/lib/"
+sys_lib_search_path_spec=" /usr/lib/gcc/x86_64-linux-gnu/4.9/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/4.9/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/4.9/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib/ /lib/x86_64-linux-gnu/4.9/ /lib/x86_64-linux-gnu/ /lib/../lib/ /usr/lib/x86_64-linux-gnu/4.9/ /usr/lib/x86_64-linux-gnu/ /usr/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../ /lib/ /usr/lib/"
 
 # Run-time system search path for libraries
-sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/kerberos/lib
-/usr/X11R6/lib
-/usr/lib/qt-3.0.3/lib
-/usr/lib/qt2/lib
-/usr/lib/sane
-/usr/lib/qt-1.45/lib
-/usr/lib/wine"
+sys_lib_dlsearch_path_spec="/lib /usr/lib include /etc/ld.so.conf.d/*.conf
+#/usr/lib/nvidia-346/
+/usr/lib/nvidia-352
+/usr/lib/nvidia-352/glx
+/usr/lib32/nvidia-352
+/usr/lib32/nvidia-352/glx
+/usr/local/cuda-7.0/targets/x86_64-linux/lib/
+/usr/lib/x86_64-linux-gnu/mesa
+/usr/local/cuda-7.5/targets/x86_64-linux/lib/"
 
 # Fix the shell variable $srcfile for the compiler.
 fix_srcfile_path=""
@@ -6748,10 +6750,10 @@ build_old_libs=`case $build_libtool_libs in yes) $echo no;; *) $echo yes;; esac`
 # End:
 # ### BEGIN LIBTOOL TAG CONFIG: CXX
 
-# Libtool was configured on host localhost.localdomain:
+# Libtool was configured on host oshmbp:
 
 # Shell to use when invoking shell scripts.
-SHELL="/bin/sh"
+SHELL="/bin/bash"
 
 # Whether or not to build shared libraries.
 build_libtool_libs=yes
@@ -6770,7 +6772,7 @@ fast_install=yes
 
 # The host system.
 host_alias=
-host=i686-pc-linux-gnu
+host=x86_64-unknown-linux-gnu
 
 # An echo program that does not interpret backslashes.
 echo="echo"
@@ -6792,7 +6794,7 @@ with_gcc=yes
 EGREP="grep -E"
 
 # The linker used to build libraries.
-LD="/usr/bin/ld"
+LD="/usr/bin/ld -m elf_x86_64"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
@@ -6921,11 +6923,11 @@ striplib="strip --strip-unneeded"
 
 # Dependencies to place before the objects being linked to create a
 # shared library.
-predep_objects="/usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../crti.o /usr/lib/gcc-lib/i386-redhat-linux/2.96/crtbeginS.o"
+predep_objects="/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbeginS.o"
 
 # Dependencies to place after the objects being linked to create a
 # shared library.
-postdep_objects="/usr/lib/gcc-lib/i386-redhat-linux/2.96/crtendS.o /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../crtn.o"
+postdep_objects="/usr/lib/gcc/x86_64-linux-gnu/4.9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o"
 
 # Dependencies to place before the objects being linked to create a
 # shared library.
@@ -6933,11 +6935,11 @@ predeps=""
 
 # Dependencies to place after the objects being linked to create a
 # shared library.
-postdeps="-lstdc++ -lm -lgcc -lc -lgcc"
+postdeps="-lstdc++ -lm -lgcc_s -lc -lgcc_s"
 
 # The library search path used internally by the compiler when linking
 # a shared library.
-compiler_lib_search_path="-L/usr/lib/gcc-lib/i386-redhat-linux/2.96 -L/usr/lib/gcc-lib/i386-redhat-linux/2.96/../../.."
+compiler_lib_search_path="-L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.."
 
 # Method to check whether dependent libraries are shared objects.
 deplibs_check_method="pass_all"
@@ -7017,16 +7019,18 @@ variables_saved_for_relink="PATH LD_LIBRARY_PATH LD_RUN_PATH GCC_EXEC_PREFIX COM
 link_all_deplibs=unknown
 
 # Compile-time system search path for libraries
-sys_lib_search_path_spec=" /usr/lib/gcc-lib/i386-redhat-linux/2.96/ /usr/lib/gcc/i386-redhat-linux/2.96/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../../i386-redhat-linux/lib/i386-redhat-linux/2.96/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../../i386-redhat-linux/lib/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../i386-redhat-linux/2.96/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../ /lib/i386-redhat-linux/2.96/ /lib/ /usr/lib/i386-redhat-linux/2.96/ /usr/lib/"
+sys_lib_search_path_spec=" /usr/lib/gcc/x86_64-linux-gnu/4.9/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/4.9/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/4.9/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib/ /lib/x86_64-linux-gnu/4.9/ /lib/x86_64-linux-gnu/ /lib/../lib/ /usr/lib/x86_64-linux-gnu/4.9/ /usr/lib/x86_64-linux-gnu/ /usr/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../ /lib/ /usr/lib/"
 
 # Run-time system search path for libraries
-sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/kerberos/lib
-/usr/X11R6/lib
-/usr/lib/qt-3.0.3/lib
-/usr/lib/qt2/lib
-/usr/lib/sane
-/usr/lib/qt-1.45/lib
-/usr/lib/wine"
+sys_lib_dlsearch_path_spec="/lib /usr/lib include /etc/ld.so.conf.d/*.conf
+#/usr/lib/nvidia-346/
+/usr/lib/nvidia-352
+/usr/lib/nvidia-352/glx
+/usr/lib32/nvidia-352
+/usr/lib32/nvidia-352/glx
+/usr/local/cuda-7.0/targets/x86_64-linux/lib/
+/usr/lib/x86_64-linux-gnu/mesa
+/usr/local/cuda-7.5/targets/x86_64-linux/lib/"
 
 # Fix the shell variable $srcfile for the compiler.
 fix_srcfile_path=""
@@ -7050,10 +7054,10 @@ include_expsyms=""
 
 # ### BEGIN LIBTOOL TAG CONFIG: F77
 
-# Libtool was configured on host localhost.localdomain:
+# Libtool was configured on host oshmbp:
 
 # Shell to use when invoking shell scripts.
-SHELL="/bin/sh"
+SHELL="/bin/bash"
 
 # Whether or not to build shared libraries.
 build_libtool_libs=yes
@@ -7072,7 +7076,7 @@ fast_install=yes
 
 # The host system.
 host_alias=
-host=i686-pc-linux-gnu
+host=x86_64-unknown-linux-gnu
 
 # An echo program that does not interpret backslashes.
 echo="echo"
@@ -7085,7 +7089,7 @@ AR_FLAGS="cru"
 LTCC="gcc"
 
 # A language-specific compiler.
-CC="g77"
+CC="f77"
 
 # Is the compiler the GNU C compiler?
 with_gcc=yes
@@ -7094,7 +7098,7 @@ with_gcc=yes
 EGREP="grep -E"
 
 # The linker used to build libraries.
-LD="/usr/bin/ld"
+LD="/usr/bin/ld -m elf_x86_64"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
@@ -7322,16 +7326,18 @@ variables_saved_for_relink="PATH LD_LIBRARY_PATH LD_RUN_PATH GCC_EXEC_PREFIX COM
 link_all_deplibs=unknown
 
 # Compile-time system search path for libraries
-sys_lib_search_path_spec=" /usr/lib/gcc-lib/i386-redhat-linux/2.96/ /usr/lib/gcc/i386-redhat-linux/2.96/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../../i386-redhat-linux/lib/i386-redhat-linux/2.96/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../../i386-redhat-linux/lib/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../i386-redhat-linux/2.96/ /usr/lib/gcc-lib/i386-redhat-linux/2.96/../../../ /lib/i386-redhat-linux/2.96/ /lib/ /usr/lib/i386-redhat-linux/2.96/ /usr/lib/"
+sys_lib_search_path_spec=" /usr/lib/gcc/x86_64-linux-gnu/4.9/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/4.9/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/4.9/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib/ /lib/x86_64-linux-gnu/4.9/ /lib/x86_64-linux-gnu/ /lib/../lib/ /usr/lib/x86_64-linux-gnu/4.9/ /usr/lib/x86_64-linux-gnu/ /usr/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/lib/ /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../ /lib/ /usr/lib/"
 
 # Run-time system search path for libraries
-sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/kerberos/lib
-/usr/X11R6/lib
-/usr/lib/qt-3.0.3/lib
-/usr/lib/qt2/lib
-/usr/lib/sane
-/usr/lib/qt-1.45/lib
-/usr/lib/wine"
+sys_lib_dlsearch_path_spec="/lib /usr/lib include /etc/ld.so.conf.d/*.conf
+#/usr/lib/nvidia-346/
+/usr/lib/nvidia-352
+/usr/lib/nvidia-352/glx
+/usr/lib32/nvidia-352
+/usr/lib32/nvidia-352/glx
+/usr/local/cuda-7.0/targets/x86_64-linux/lib/
+/usr/lib/x86_64-linux-gnu/mesa
+/usr/local/cuda-7.5/targets/x86_64-linux/lib/"
 
 # Fix the shell variable $srcfile for the compiler.
 fix_srcfile_path=""

@@ -23,6 +23,8 @@
 #ifdef PNL_RTTI
 #include "pnlpnlType.hpp"
 #endif 
+#include <stdint.h>
+#include <limits.h>
 PNL_BEGIN
 
 // to represent the relationships between neighboring nodes in the graph */
@@ -30,14 +32,14 @@ PNL_BEGIN
 // there are three types of the neighbors for each node, a neighbors
 // can either be: a parent, a child or just a neighbor, which means
 // that the edge connecting those two nodes is undirected */
-typedef PNL_API enum
+typedef PNL_API enum _ENeighborType
 {
     ntParent,
     ntChild,
     ntNeighbor
 } ENeighborType;
 
-typedef PNL_API enum
+typedef PNL_API enum _EGraphNodePattern
 {
     PNL_GRAPH_NODE_FOLK = -1,
     PNL_GRAPH_NODE_SEPARATOR = -2,
