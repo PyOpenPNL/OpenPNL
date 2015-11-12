@@ -1,0 +1,17 @@
+clear()
+AddNode("discrete^x", "Fals true")
+AddNode("discrete^y", "Fals true")
+AddNode("discrete^z", "Fals true")
+AddArc("x", "y")
+AddArc("y", "z")
+print("created net...")
+SetPTabular("x^Fals", "0.3")
+SetPTabular("x^true", "0.7")
+
+GetPTabular("x")
+GetPTabular("y")
+GetPTabular("z")
+print()
+// run console
+console()
+print("bye")

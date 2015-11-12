@@ -1,0 +1,11 @@
+Package: PNLRPackage
+Version: 0.1-1
+Date: 2005-03-28
+Title: Implementation of manipulating with bayesian network
+Author: Anna A. Labutina <anuta@incub.ru>.
+Maintainer: Anna A. Labutina <anuta@incub.ru>
+Depends: R (>= 1.8.0), nlme
+Suggests: MASS
+Description: Implementation of manipulating with bayesian network
+License: GPL version 2 or newer
+URL: http://www.r-project.org

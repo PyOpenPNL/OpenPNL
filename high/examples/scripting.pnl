@@ -1,0 +1,4 @@
+print("Execution of script 'scripting.pnl'")
+execute("rpsCreate.pnl")
+console()
+print("End of 'scripting.pnl'")
