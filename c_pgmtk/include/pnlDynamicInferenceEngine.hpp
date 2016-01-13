@@ -30,7 +30,7 @@
 
 PNL_BEGIN
 
-typedef PNL_API enum
+typedef PNL_API enum _EProcedureTypes
 {
 	ptFiltering,
 	ptSmoothing,

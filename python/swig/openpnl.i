@@ -16,6 +16,7 @@
 #include "pnlFactors.hpp"
 #include "pnlDBN.hpp"
 #include "pnlExampleModels.hpp"
+#include "pnl1_5SliceJtreeInferenceEngine.hpp"
 %}
 
 %include "typemaps.i"
@@ -74,3 +75,7 @@ namespace pnl {
 %include "pnlMNet.hpp"
 %include "pnlMRF2.hpp"
 %include "pnlExampleModels.hpp"
+%include "pnlDynamicInferenceEngine.hpp"
+%include "pnl2TBNInferenceEngine.hpp"
+%include "pnl1_5SliceInferenceEngine.hpp"
+%include "pnl1_5SliceJtreeInferenceEngine.hpp"
