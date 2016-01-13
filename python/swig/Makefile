@@ -11,4 +11,4 @@ test:
 	python -c 'import openpnl'
 
 clean:
-	rm -f _openpnl.so openpnl_wrap.cxx openpnl.py openpnl.pyc
+	rm -f _openpnl.so openpnl_wrap.cxx openpnl.py openpnl.pyc openpnl_wrap.o

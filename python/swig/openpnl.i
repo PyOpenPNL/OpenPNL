@@ -34,6 +34,13 @@ namespace std {
 %template(intVecVector) std::vector< std::vector< int > >;
 
 namespace pnl {
+  class CPNLBase 
+  {
+    protected:
+      CPNLBase();
+  };
+
+
   class Value
   {
     public:
@@ -63,6 +70,7 @@ namespace pnl {
 %include "pnlDynamicGraphicalModel.hpp"
 %include "pnlEvidence.hpp"
 %include "pnlDBN.hpp"
-%include "pnlMRF2.hpp"
 %include "pnlBNet.hpp"
+%include "pnlMNet.hpp"
+%include "pnlMRF2.hpp"
 %include "pnlExampleModels.hpp"
