@@ -27,7 +27,7 @@
 #endif 
 PNL_BEGIN
 
-typedef PNL_API enum 
+typedef PNL_API enum  _EMatrixType
 {
     matTable,
     matMean,
@@ -41,7 +41,7 @@ typedef PNL_API enum
 
 } EMatrixType;
 
-typedef PNL_API enum 
+typedef PNL_API enum _EStatisticalMatrix
 {
     stMatTable,
     stMatMu,
@@ -50,7 +50,7 @@ typedef PNL_API enum
     stMatWeight
 } EStatisticalMatrix;
 
-typedef PNL_API enum 
+typedef PNL_API enum _EMatrixClass
 {
     mcBase,
     mcSparse,
