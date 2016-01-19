@@ -170,6 +170,7 @@ public:
         : std::vector<Type, Allocator>( F, L, Al )
     {}
 #endif
+#ifndef SWIG
     bool lexicographical_compare(iterator First1, iterator Last1,
 	iterator First2, iterator Last2)
     {
@@ -177,6 +178,7 @@ public:
 	    (const unsigned char *)First1, (const unsigned char *)Last1,
 	    (const unsigned char *)First2, (const unsigned char *)Last2);
     }
+#endif
 
     MyType &operator=( const MyType &X )
     {
