@@ -117,12 +117,17 @@ am__uninstall_files_from_dir = { \
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libhigh_la_LIBADD =
-am_libhigh_la_OBJECTS = BNet.lo BNetCB.lo DBN.lo DBNCB.lo LIMID.lo \
-	LIMIDCB.lo MRF.lo MRFCB.lo ModelEngine.lo NetCallBack.lo \
-	PersistProbNet.lo PersistWNodeInfo.lo PersistWTypes.lo \
-	TokenCover.lo Tokens.lo WCliques.lo WCover.lo WDistribFun.lo \
-	WInner.lo Wcsv.lo pnlTok.lo pnlWDistributions.lo \
-	pnlWEvidence.lo pnlWGraph.lo pnlWProbabilisticNet.lo
+am_libhigh_la_OBJECTS = libhigh_la-BNet.lo libhigh_la-BNetCB.lo \
+	libhigh_la-DBN.lo libhigh_la-DBNCB.lo libhigh_la-LIMID.lo \
+	libhigh_la-LIMIDCB.lo libhigh_la-MRF.lo libhigh_la-MRFCB.lo \
+	libhigh_la-ModelEngine.lo libhigh_la-NetCallBack.lo \
+	libhigh_la-PersistProbNet.lo libhigh_la-PersistWNodeInfo.lo \
+	libhigh_la-PersistWTypes.lo libhigh_la-TokenCover.lo \
+	libhigh_la-Tokens.lo libhigh_la-WCliques.lo \
+	libhigh_la-WCover.lo libhigh_la-WDistribFun.lo \
+	libhigh_la-WInner.lo libhigh_la-Wcsv.lo libhigh_la-pnlTok.lo \
+	libhigh_la-pnlWDistributions.lo libhigh_la-pnlWEvidence.lo \
+	libhigh_la-pnlWGraph.lo libhigh_la-pnlWProbabilisticNet.lo
 libhigh_la_OBJECTS = $(am_libhigh_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -327,13 +332,13 @@ target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/
+AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/ -Wno-vla
 PNLD = $(top_srcdir)/c_pgmtk
 PNLBUILDD = $(top_builddir)/c_pgmtk
-PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.a
+PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.la -ldl
 PNL_INCL = -I$(top_srcdir)/cxcore/cxcore/include -I$(PNLD)/include -I$(PNLD)/src/include/cart -I$(PNLD)/src/include
 lib_LTLIBRARIES = libhigh.la
-libhigh_la_CFLAGS = $(PNL_INCL) -I$(srcdir)/../include
+libhigh_la_CPPFLAGS = $(PNL_INCL) -I$(srcdir)/../include
 libhigh_la_SOURCES = \
      BNet.cpp     \
      BNetCB.cpp     \
@@ -361,7 +366,7 @@ libhigh_la_SOURCES = \
      pnlWGraph.cpp     \
      pnlWProbabilisticNet.cpp
 
-libhigh_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) @LD_FLAGS@
+libhigh_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) 
 all: all-am
 
 .SUFFIXES:
@@ -442,31 +447,31 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/BNet.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/BNetCB.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/DBN.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/DBNCB.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/LIMID.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/LIMIDCB.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/MRF.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/MRFCB.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ModelEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/NetCallBack.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PersistProbNet.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PersistWNodeInfo.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PersistWTypes.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TokenCover.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Tokens.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/WCliques.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/WCover.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/WDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/WInner.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Wcsv.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlTok.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlWDistributions.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlWEvidence.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlWGraph.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlWProbabilisticNet.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-BNet.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-BNetCB.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-DBN.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-DBNCB.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-LIMID.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-LIMIDCB.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-MRF.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-MRFCB.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-ModelEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-NetCallBack.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-PersistProbNet.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-PersistWNodeInfo.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-PersistWTypes.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-TokenCover.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-Tokens.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-WCliques.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-WCover.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-WDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-WInner.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-Wcsv.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-pnlTok.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-pnlWDistributions.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-pnlWEvidence.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-pnlWGraph.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libhigh_la-pnlWProbabilisticNet.Plo@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -488,6 +493,181 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LTCXXCOMPILE) -c -o $@ $<
+
+libhigh_la-BNet.lo: BNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-BNet.lo -MD -MP -MF $(DEPDIR)/libhigh_la-BNet.Tpo -c -o libhigh_la-BNet.lo `test -f 'BNet.cpp' || echo '$(srcdir)/'`BNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-BNet.Tpo $(DEPDIR)/libhigh_la-BNet.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='BNet.cpp' object='libhigh_la-BNet.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-BNet.lo `test -f 'BNet.cpp' || echo '$(srcdir)/'`BNet.cpp
+
+libhigh_la-BNetCB.lo: BNetCB.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-BNetCB.lo -MD -MP -MF $(DEPDIR)/libhigh_la-BNetCB.Tpo -c -o libhigh_la-BNetCB.lo `test -f 'BNetCB.cpp' || echo '$(srcdir)/'`BNetCB.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-BNetCB.Tpo $(DEPDIR)/libhigh_la-BNetCB.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='BNetCB.cpp' object='libhigh_la-BNetCB.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-BNetCB.lo `test -f 'BNetCB.cpp' || echo '$(srcdir)/'`BNetCB.cpp
+
+libhigh_la-DBN.lo: DBN.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-DBN.lo -MD -MP -MF $(DEPDIR)/libhigh_la-DBN.Tpo -c -o libhigh_la-DBN.lo `test -f 'DBN.cpp' || echo '$(srcdir)/'`DBN.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-DBN.Tpo $(DEPDIR)/libhigh_la-DBN.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='DBN.cpp' object='libhigh_la-DBN.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-DBN.lo `test -f 'DBN.cpp' || echo '$(srcdir)/'`DBN.cpp
+
+libhigh_la-DBNCB.lo: DBNCB.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-DBNCB.lo -MD -MP -MF $(DEPDIR)/libhigh_la-DBNCB.Tpo -c -o libhigh_la-DBNCB.lo `test -f 'DBNCB.cpp' || echo '$(srcdir)/'`DBNCB.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-DBNCB.Tpo $(DEPDIR)/libhigh_la-DBNCB.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='DBNCB.cpp' object='libhigh_la-DBNCB.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-DBNCB.lo `test -f 'DBNCB.cpp' || echo '$(srcdir)/'`DBNCB.cpp
+
+libhigh_la-LIMID.lo: LIMID.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-LIMID.lo -MD -MP -MF $(DEPDIR)/libhigh_la-LIMID.Tpo -c -o libhigh_la-LIMID.lo `test -f 'LIMID.cpp' || echo '$(srcdir)/'`LIMID.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-LIMID.Tpo $(DEPDIR)/libhigh_la-LIMID.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='LIMID.cpp' object='libhigh_la-LIMID.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-LIMID.lo `test -f 'LIMID.cpp' || echo '$(srcdir)/'`LIMID.cpp
+
+libhigh_la-LIMIDCB.lo: LIMIDCB.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-LIMIDCB.lo -MD -MP -MF $(DEPDIR)/libhigh_la-LIMIDCB.Tpo -c -o libhigh_la-LIMIDCB.lo `test -f 'LIMIDCB.cpp' || echo '$(srcdir)/'`LIMIDCB.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-LIMIDCB.Tpo $(DEPDIR)/libhigh_la-LIMIDCB.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='LIMIDCB.cpp' object='libhigh_la-LIMIDCB.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-LIMIDCB.lo `test -f 'LIMIDCB.cpp' || echo '$(srcdir)/'`LIMIDCB.cpp
+
+libhigh_la-MRF.lo: MRF.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-MRF.lo -MD -MP -MF $(DEPDIR)/libhigh_la-MRF.Tpo -c -o libhigh_la-MRF.lo `test -f 'MRF.cpp' || echo '$(srcdir)/'`MRF.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-MRF.Tpo $(DEPDIR)/libhigh_la-MRF.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='MRF.cpp' object='libhigh_la-MRF.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-MRF.lo `test -f 'MRF.cpp' || echo '$(srcdir)/'`MRF.cpp
+
+libhigh_la-MRFCB.lo: MRFCB.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-MRFCB.lo -MD -MP -MF $(DEPDIR)/libhigh_la-MRFCB.Tpo -c -o libhigh_la-MRFCB.lo `test -f 'MRFCB.cpp' || echo '$(srcdir)/'`MRFCB.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-MRFCB.Tpo $(DEPDIR)/libhigh_la-MRFCB.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='MRFCB.cpp' object='libhigh_la-MRFCB.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-MRFCB.lo `test -f 'MRFCB.cpp' || echo '$(srcdir)/'`MRFCB.cpp
+
+libhigh_la-ModelEngine.lo: ModelEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-ModelEngine.lo -MD -MP -MF $(DEPDIR)/libhigh_la-ModelEngine.Tpo -c -o libhigh_la-ModelEngine.lo `test -f 'ModelEngine.cpp' || echo '$(srcdir)/'`ModelEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-ModelEngine.Tpo $(DEPDIR)/libhigh_la-ModelEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='ModelEngine.cpp' object='libhigh_la-ModelEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-ModelEngine.lo `test -f 'ModelEngine.cpp' || echo '$(srcdir)/'`ModelEngine.cpp
+
+libhigh_la-NetCallBack.lo: NetCallBack.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-NetCallBack.lo -MD -MP -MF $(DEPDIR)/libhigh_la-NetCallBack.Tpo -c -o libhigh_la-NetCallBack.lo `test -f 'NetCallBack.cpp' || echo '$(srcdir)/'`NetCallBack.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-NetCallBack.Tpo $(DEPDIR)/libhigh_la-NetCallBack.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='NetCallBack.cpp' object='libhigh_la-NetCallBack.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-NetCallBack.lo `test -f 'NetCallBack.cpp' || echo '$(srcdir)/'`NetCallBack.cpp
+
+libhigh_la-PersistProbNet.lo: PersistProbNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-PersistProbNet.lo -MD -MP -MF $(DEPDIR)/libhigh_la-PersistProbNet.Tpo -c -o libhigh_la-PersistProbNet.lo `test -f 'PersistProbNet.cpp' || echo '$(srcdir)/'`PersistProbNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-PersistProbNet.Tpo $(DEPDIR)/libhigh_la-PersistProbNet.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='PersistProbNet.cpp' object='libhigh_la-PersistProbNet.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-PersistProbNet.lo `test -f 'PersistProbNet.cpp' || echo '$(srcdir)/'`PersistProbNet.cpp
+
+libhigh_la-PersistWNodeInfo.lo: PersistWNodeInfo.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-PersistWNodeInfo.lo -MD -MP -MF $(DEPDIR)/libhigh_la-PersistWNodeInfo.Tpo -c -o libhigh_la-PersistWNodeInfo.lo `test -f 'PersistWNodeInfo.cpp' || echo '$(srcdir)/'`PersistWNodeInfo.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-PersistWNodeInfo.Tpo $(DEPDIR)/libhigh_la-PersistWNodeInfo.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='PersistWNodeInfo.cpp' object='libhigh_la-PersistWNodeInfo.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-PersistWNodeInfo.lo `test -f 'PersistWNodeInfo.cpp' || echo '$(srcdir)/'`PersistWNodeInfo.cpp
+
+libhigh_la-PersistWTypes.lo: PersistWTypes.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-PersistWTypes.lo -MD -MP -MF $(DEPDIR)/libhigh_la-PersistWTypes.Tpo -c -o libhigh_la-PersistWTypes.lo `test -f 'PersistWTypes.cpp' || echo '$(srcdir)/'`PersistWTypes.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-PersistWTypes.Tpo $(DEPDIR)/libhigh_la-PersistWTypes.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='PersistWTypes.cpp' object='libhigh_la-PersistWTypes.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-PersistWTypes.lo `test -f 'PersistWTypes.cpp' || echo '$(srcdir)/'`PersistWTypes.cpp
+
+libhigh_la-TokenCover.lo: TokenCover.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-TokenCover.lo -MD -MP -MF $(DEPDIR)/libhigh_la-TokenCover.Tpo -c -o libhigh_la-TokenCover.lo `test -f 'TokenCover.cpp' || echo '$(srcdir)/'`TokenCover.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-TokenCover.Tpo $(DEPDIR)/libhigh_la-TokenCover.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='TokenCover.cpp' object='libhigh_la-TokenCover.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-TokenCover.lo `test -f 'TokenCover.cpp' || echo '$(srcdir)/'`TokenCover.cpp
+
+libhigh_la-Tokens.lo: Tokens.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-Tokens.lo -MD -MP -MF $(DEPDIR)/libhigh_la-Tokens.Tpo -c -o libhigh_la-Tokens.lo `test -f 'Tokens.cpp' || echo '$(srcdir)/'`Tokens.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-Tokens.Tpo $(DEPDIR)/libhigh_la-Tokens.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='Tokens.cpp' object='libhigh_la-Tokens.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-Tokens.lo `test -f 'Tokens.cpp' || echo '$(srcdir)/'`Tokens.cpp
+
+libhigh_la-WCliques.lo: WCliques.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-WCliques.lo -MD -MP -MF $(DEPDIR)/libhigh_la-WCliques.Tpo -c -o libhigh_la-WCliques.lo `test -f 'WCliques.cpp' || echo '$(srcdir)/'`WCliques.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-WCliques.Tpo $(DEPDIR)/libhigh_la-WCliques.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='WCliques.cpp' object='libhigh_la-WCliques.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-WCliques.lo `test -f 'WCliques.cpp' || echo '$(srcdir)/'`WCliques.cpp
+
+libhigh_la-WCover.lo: WCover.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-WCover.lo -MD -MP -MF $(DEPDIR)/libhigh_la-WCover.Tpo -c -o libhigh_la-WCover.lo `test -f 'WCover.cpp' || echo '$(srcdir)/'`WCover.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-WCover.Tpo $(DEPDIR)/libhigh_la-WCover.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='WCover.cpp' object='libhigh_la-WCover.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-WCover.lo `test -f 'WCover.cpp' || echo '$(srcdir)/'`WCover.cpp
+
+libhigh_la-WDistribFun.lo: WDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-WDistribFun.lo -MD -MP -MF $(DEPDIR)/libhigh_la-WDistribFun.Tpo -c -o libhigh_la-WDistribFun.lo `test -f 'WDistribFun.cpp' || echo '$(srcdir)/'`WDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-WDistribFun.Tpo $(DEPDIR)/libhigh_la-WDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='WDistribFun.cpp' object='libhigh_la-WDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-WDistribFun.lo `test -f 'WDistribFun.cpp' || echo '$(srcdir)/'`WDistribFun.cpp
+
+libhigh_la-WInner.lo: WInner.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-WInner.lo -MD -MP -MF $(DEPDIR)/libhigh_la-WInner.Tpo -c -o libhigh_la-WInner.lo `test -f 'WInner.cpp' || echo '$(srcdir)/'`WInner.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-WInner.Tpo $(DEPDIR)/libhigh_la-WInner.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='WInner.cpp' object='libhigh_la-WInner.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-WInner.lo `test -f 'WInner.cpp' || echo '$(srcdir)/'`WInner.cpp
+
+libhigh_la-Wcsv.lo: Wcsv.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-Wcsv.lo -MD -MP -MF $(DEPDIR)/libhigh_la-Wcsv.Tpo -c -o libhigh_la-Wcsv.lo `test -f 'Wcsv.cpp' || echo '$(srcdir)/'`Wcsv.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-Wcsv.Tpo $(DEPDIR)/libhigh_la-Wcsv.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='Wcsv.cpp' object='libhigh_la-Wcsv.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-Wcsv.lo `test -f 'Wcsv.cpp' || echo '$(srcdir)/'`Wcsv.cpp
+
+libhigh_la-pnlTok.lo: pnlTok.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-pnlTok.lo -MD -MP -MF $(DEPDIR)/libhigh_la-pnlTok.Tpo -c -o libhigh_la-pnlTok.lo `test -f 'pnlTok.cpp' || echo '$(srcdir)/'`pnlTok.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-pnlTok.Tpo $(DEPDIR)/libhigh_la-pnlTok.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlTok.cpp' object='libhigh_la-pnlTok.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-pnlTok.lo `test -f 'pnlTok.cpp' || echo '$(srcdir)/'`pnlTok.cpp
+
+libhigh_la-pnlWDistributions.lo: pnlWDistributions.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-pnlWDistributions.lo -MD -MP -MF $(DEPDIR)/libhigh_la-pnlWDistributions.Tpo -c -o libhigh_la-pnlWDistributions.lo `test -f 'pnlWDistributions.cpp' || echo '$(srcdir)/'`pnlWDistributions.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-pnlWDistributions.Tpo $(DEPDIR)/libhigh_la-pnlWDistributions.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlWDistributions.cpp' object='libhigh_la-pnlWDistributions.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-pnlWDistributions.lo `test -f 'pnlWDistributions.cpp' || echo '$(srcdir)/'`pnlWDistributions.cpp
+
+libhigh_la-pnlWEvidence.lo: pnlWEvidence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-pnlWEvidence.lo -MD -MP -MF $(DEPDIR)/libhigh_la-pnlWEvidence.Tpo -c -o libhigh_la-pnlWEvidence.lo `test -f 'pnlWEvidence.cpp' || echo '$(srcdir)/'`pnlWEvidence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-pnlWEvidence.Tpo $(DEPDIR)/libhigh_la-pnlWEvidence.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlWEvidence.cpp' object='libhigh_la-pnlWEvidence.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-pnlWEvidence.lo `test -f 'pnlWEvidence.cpp' || echo '$(srcdir)/'`pnlWEvidence.cpp
+
+libhigh_la-pnlWGraph.lo: pnlWGraph.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-pnlWGraph.lo -MD -MP -MF $(DEPDIR)/libhigh_la-pnlWGraph.Tpo -c -o libhigh_la-pnlWGraph.lo `test -f 'pnlWGraph.cpp' || echo '$(srcdir)/'`pnlWGraph.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-pnlWGraph.Tpo $(DEPDIR)/libhigh_la-pnlWGraph.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlWGraph.cpp' object='libhigh_la-pnlWGraph.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-pnlWGraph.lo `test -f 'pnlWGraph.cpp' || echo '$(srcdir)/'`pnlWGraph.cpp
+
+libhigh_la-pnlWProbabilisticNet.lo: pnlWProbabilisticNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libhigh_la-pnlWProbabilisticNet.lo -MD -MP -MF $(DEPDIR)/libhigh_la-pnlWProbabilisticNet.Tpo -c -o libhigh_la-pnlWProbabilisticNet.lo `test -f 'pnlWProbabilisticNet.cpp' || echo '$(srcdir)/'`pnlWProbabilisticNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libhigh_la-pnlWProbabilisticNet.Tpo $(DEPDIR)/libhigh_la-pnlWProbabilisticNet.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlWProbabilisticNet.cpp' object='libhigh_la-pnlWProbabilisticNet.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libhigh_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libhigh_la-pnlWProbabilisticNet.lo `test -f 'pnlWProbabilisticNet.cpp' || echo '$(srcdir)/'`pnlWProbabilisticNet.cpp
 
 mostlyclean-libtool:
 	-rm -f *.lo

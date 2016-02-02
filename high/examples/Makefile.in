@@ -91,10 +91,13 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(highexdir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_example_OBJECTS = rps.$(OBJEXT) console.$(OBJEXT) \
-	example_common_funs.$(OBJEXT) script_lex.$(OBJEXT)
+am_example_OBJECTS = example-rps.$(OBJEXT) example-console.$(OBJEXT) \
+	example-example_common_funs.$(OBJEXT) \
+	example-script_lex.$(OBJEXT)
 example_OBJECTS = $(am_example_OBJECTS)
-example_DEPENDENCIES = $(PNL_LIBS) \
+am__DEPENDENCIES_1 = $(PNLBUILDD)/src/libpnl.la \
+	$(top_builddir)/cxcore/cxcore/src/libcxcore.la
+example_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	$(top_builddir)/high/source/libhigh.la
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -324,12 +327,12 @@ target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/
+AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/ -Wno-vla
 PNLD = $(top_srcdir)/c_pgmtk
 PNLBUILDD = $(top_builddir)/c_pgmtk
-PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.a
+PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.la -ldl
 PNL_INCL = -I$(top_srcdir)/cxcore/cxcore/include -I$(PNLD)/include -I$(PNLD)/src/include/cart -I$(PNLD)/src/include
-example_CFLAGS = $(PNL_INCL) -I$(srcdir)/../include -I$(srcdir)
+example_CPPFLAGS = $(PNL_INCL) -I$(srcdir)/../include -I$(srcdir)
 example_SOURCES = rps.cpp console.cpp example_common_funs.cpp script_lex.cpp
 example_LDADD = $(PNL_LIBS) $(top_builddir)/high/source/libhigh.la
 highexdir = $(prefix)/high/examples
@@ -451,10 +454,10 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/console.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/example_common_funs.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rps.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/script_lex.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/example-console.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/example-example_common_funs.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/example-rps.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/example-script_lex.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -476,6 +479,62 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LTCXXCOMPILE) -c -o $@ $<
+
+example-rps.o: rps.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT example-rps.o -MD -MP -MF $(DEPDIR)/example-rps.Tpo -c -o example-rps.o `test -f 'rps.cpp' || echo '$(srcdir)/'`rps.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/example-rps.Tpo $(DEPDIR)/example-rps.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='rps.cpp' object='example-rps.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o example-rps.o `test -f 'rps.cpp' || echo '$(srcdir)/'`rps.cpp
+
+example-rps.obj: rps.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT example-rps.obj -MD -MP -MF $(DEPDIR)/example-rps.Tpo -c -o example-rps.obj `if test -f 'rps.cpp'; then $(CYGPATH_W) 'rps.cpp'; else $(CYGPATH_W) '$(srcdir)/rps.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/example-rps.Tpo $(DEPDIR)/example-rps.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='rps.cpp' object='example-rps.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o example-rps.obj `if test -f 'rps.cpp'; then $(CYGPATH_W) 'rps.cpp'; else $(CYGPATH_W) '$(srcdir)/rps.cpp'; fi`
+
+example-console.o: console.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT example-console.o -MD -MP -MF $(DEPDIR)/example-console.Tpo -c -o example-console.o `test -f 'console.cpp' || echo '$(srcdir)/'`console.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/example-console.Tpo $(DEPDIR)/example-console.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='console.cpp' object='example-console.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o example-console.o `test -f 'console.cpp' || echo '$(srcdir)/'`console.cpp
+
+example-console.obj: console.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT example-console.obj -MD -MP -MF $(DEPDIR)/example-console.Tpo -c -o example-console.obj `if test -f 'console.cpp'; then $(CYGPATH_W) 'console.cpp'; else $(CYGPATH_W) '$(srcdir)/console.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/example-console.Tpo $(DEPDIR)/example-console.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='console.cpp' object='example-console.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o example-console.obj `if test -f 'console.cpp'; then $(CYGPATH_W) 'console.cpp'; else $(CYGPATH_W) '$(srcdir)/console.cpp'; fi`
+
+example-example_common_funs.o: example_common_funs.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT example-example_common_funs.o -MD -MP -MF $(DEPDIR)/example-example_common_funs.Tpo -c -o example-example_common_funs.o `test -f 'example_common_funs.cpp' || echo '$(srcdir)/'`example_common_funs.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/example-example_common_funs.Tpo $(DEPDIR)/example-example_common_funs.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='example_common_funs.cpp' object='example-example_common_funs.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o example-example_common_funs.o `test -f 'example_common_funs.cpp' || echo '$(srcdir)/'`example_common_funs.cpp
+
+example-example_common_funs.obj: example_common_funs.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT example-example_common_funs.obj -MD -MP -MF $(DEPDIR)/example-example_common_funs.Tpo -c -o example-example_common_funs.obj `if test -f 'example_common_funs.cpp'; then $(CYGPATH_W) 'example_common_funs.cpp'; else $(CYGPATH_W) '$(srcdir)/example_common_funs.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/example-example_common_funs.Tpo $(DEPDIR)/example-example_common_funs.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='example_common_funs.cpp' object='example-example_common_funs.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o example-example_common_funs.obj `if test -f 'example_common_funs.cpp'; then $(CYGPATH_W) 'example_common_funs.cpp'; else $(CYGPATH_W) '$(srcdir)/example_common_funs.cpp'; fi`
+
+example-script_lex.o: script_lex.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT example-script_lex.o -MD -MP -MF $(DEPDIR)/example-script_lex.Tpo -c -o example-script_lex.o `test -f 'script_lex.cpp' || echo '$(srcdir)/'`script_lex.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/example-script_lex.Tpo $(DEPDIR)/example-script_lex.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script_lex.cpp' object='example-script_lex.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o example-script_lex.o `test -f 'script_lex.cpp' || echo '$(srcdir)/'`script_lex.cpp
+
+example-script_lex.obj: script_lex.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT example-script_lex.obj -MD -MP -MF $(DEPDIR)/example-script_lex.Tpo -c -o example-script_lex.obj `if test -f 'script_lex.cpp'; then $(CYGPATH_W) 'script_lex.cpp'; else $(CYGPATH_W) '$(srcdir)/script_lex.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/example-script_lex.Tpo $(DEPDIR)/example-script_lex.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script_lex.cpp' object='example-script_lex.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(example_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o example-script_lex.obj `if test -f 'script_lex.cpp'; then $(CYGPATH_W) 'script_lex.cpp'; else $(CYGPATH_W) '$(srcdir)/script_lex.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

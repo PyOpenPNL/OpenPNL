@@ -35,6 +35,6 @@ noinst_HEADERS =
 
 EXTRA_DIST = _cxcore.h _cxexport.def _cxipp.h
 
-LIBS = -lm
+LIBS = -lm -ldl
 
 AM_CPPFLAGS = -I$(srcdir) -I$(srcdir)/../include

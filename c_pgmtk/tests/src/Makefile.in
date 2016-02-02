@@ -130,7 +130,9 @@ am_tests_pnl_c_OBJECTS = A1_5JTreeInfDBNCondGauss.$(OBJEXT) \
 	tCreateRandStructs.$(OBJEXT) TJTreeInfEngTiming.$(OBJEXT) \
 	TPearlInfEngTiming.$(OBJEXT) tsys.$(OBJEXT) tUtil.$(OBJEXT)
 tests_pnl_c_OBJECTS = $(am_tests_pnl_c_OBJECTS)
-tests_pnl_c_DEPENDENCIES = $(PNL_LIBS) \
+am__DEPENDENCIES_1 = $(PNLBUILDD)/src/libpnl.la \
+	$(top_builddir)/cxcore/cxcore/src/libcxcore.la
+tests_pnl_c_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	$(top_builddir)/trs/src/libtrs.a
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -536,10 +538,10 @@ target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/
+AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/ -Wno-vla
 PNLD = $(top_srcdir)/c_pgmtk
 PNLBUILDD = $(top_builddir)/c_pgmtk
-PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.a
+PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.la -ldl
 PNL_INCL = -I$(top_srcdir)/cxcore/cxcore/include -I$(PNLD)/include -I$(PNLD)/src/include/cart -I$(PNLD)/src/include
 tests_pnl_c_CFLAGS = $(PNL_INCL) -I$(srcdir)/../include -I$(top_srcdir)/trs/include
 tests_pnl_c_SOURCES = \

@@ -90,10 +90,12 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_parPNLTest_OBJECTS = parPNLTest.$(OBJEXT) LoadBNet.$(OBJEXT) \
-	CreateBNets.$(OBJEXT)
+am_parPNLTest_OBJECTS = parPNLTest-parPNLTest.$(OBJEXT) \
+	parPNLTest-LoadBNet.$(OBJEXT) parPNLTest-CreateBNets.$(OBJEXT)
 parPNLTest_OBJECTS = $(am_parPNLTest_OBJECTS)
-parPNLTest_DEPENDENCIES = $(PNL_LIBS)
+am__DEPENDENCIES_1 = $(PNLBUILDD)/src/libpnl.la \
+	$(top_builddir)/cxcore/cxcore/src/libcxcore.la
+parPNLTest_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
@@ -294,12 +296,12 @@ target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/
+AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/ -Wno-vla
 PNLD = $(top_srcdir)/c_pgmtk
 PNLBUILDD = $(top_builddir)/c_pgmtk
-PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.a
+PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.la -ldl
 PNL_INCL = -I$(top_srcdir)/cxcore/cxcore/include -I$(PNLD)/include -I$(PNLD)/src/include/cart -I$(PNLD)/src/include
-parPNLTest_CFLAGS = $(PNL_INCL) -I$(srcdir)/../include
+parPNLTest_CPPFLAGS = $(PNL_INCL) -I$(srcdir)/../include -I../include
 parPNLTest_SOURCES = parPNLTest.cpp LoadBNet.cpp CreateBNets.cpp
 parPNLTest_LDADD = $(PNL_LIBS)
 all: all-am
@@ -397,9 +399,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CreateBNets.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/LoadBNet.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parPNLTest.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parPNLTest-CreateBNets.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parPNLTest-LoadBNet.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parPNLTest-parPNLTest.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -421,6 +423,48 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LTCXXCOMPILE) -c -o $@ $<
+
+parPNLTest-parPNLTest.o: parPNLTest.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT parPNLTest-parPNLTest.o -MD -MP -MF $(DEPDIR)/parPNLTest-parPNLTest.Tpo -c -o parPNLTest-parPNLTest.o `test -f 'parPNLTest.cpp' || echo '$(srcdir)/'`parPNLTest.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/parPNLTest-parPNLTest.Tpo $(DEPDIR)/parPNLTest-parPNLTest.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='parPNLTest.cpp' object='parPNLTest-parPNLTest.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o parPNLTest-parPNLTest.o `test -f 'parPNLTest.cpp' || echo '$(srcdir)/'`parPNLTest.cpp
+
+parPNLTest-parPNLTest.obj: parPNLTest.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT parPNLTest-parPNLTest.obj -MD -MP -MF $(DEPDIR)/parPNLTest-parPNLTest.Tpo -c -o parPNLTest-parPNLTest.obj `if test -f 'parPNLTest.cpp'; then $(CYGPATH_W) 'parPNLTest.cpp'; else $(CYGPATH_W) '$(srcdir)/parPNLTest.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/parPNLTest-parPNLTest.Tpo $(DEPDIR)/parPNLTest-parPNLTest.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='parPNLTest.cpp' object='parPNLTest-parPNLTest.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o parPNLTest-parPNLTest.obj `if test -f 'parPNLTest.cpp'; then $(CYGPATH_W) 'parPNLTest.cpp'; else $(CYGPATH_W) '$(srcdir)/parPNLTest.cpp'; fi`
+
+parPNLTest-LoadBNet.o: LoadBNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT parPNLTest-LoadBNet.o -MD -MP -MF $(DEPDIR)/parPNLTest-LoadBNet.Tpo -c -o parPNLTest-LoadBNet.o `test -f 'LoadBNet.cpp' || echo '$(srcdir)/'`LoadBNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/parPNLTest-LoadBNet.Tpo $(DEPDIR)/parPNLTest-LoadBNet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='LoadBNet.cpp' object='parPNLTest-LoadBNet.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o parPNLTest-LoadBNet.o `test -f 'LoadBNet.cpp' || echo '$(srcdir)/'`LoadBNet.cpp
+
+parPNLTest-LoadBNet.obj: LoadBNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT parPNLTest-LoadBNet.obj -MD -MP -MF $(DEPDIR)/parPNLTest-LoadBNet.Tpo -c -o parPNLTest-LoadBNet.obj `if test -f 'LoadBNet.cpp'; then $(CYGPATH_W) 'LoadBNet.cpp'; else $(CYGPATH_W) '$(srcdir)/LoadBNet.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/parPNLTest-LoadBNet.Tpo $(DEPDIR)/parPNLTest-LoadBNet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='LoadBNet.cpp' object='parPNLTest-LoadBNet.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o parPNLTest-LoadBNet.obj `if test -f 'LoadBNet.cpp'; then $(CYGPATH_W) 'LoadBNet.cpp'; else $(CYGPATH_W) '$(srcdir)/LoadBNet.cpp'; fi`
+
+parPNLTest-CreateBNets.o: CreateBNets.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT parPNLTest-CreateBNets.o -MD -MP -MF $(DEPDIR)/parPNLTest-CreateBNets.Tpo -c -o parPNLTest-CreateBNets.o `test -f 'CreateBNets.cpp' || echo '$(srcdir)/'`CreateBNets.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/parPNLTest-CreateBNets.Tpo $(DEPDIR)/parPNLTest-CreateBNets.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='CreateBNets.cpp' object='parPNLTest-CreateBNets.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o parPNLTest-CreateBNets.o `test -f 'CreateBNets.cpp' || echo '$(srcdir)/'`CreateBNets.cpp
+
+parPNLTest-CreateBNets.obj: CreateBNets.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT parPNLTest-CreateBNets.obj -MD -MP -MF $(DEPDIR)/parPNLTest-CreateBNets.Tpo -c -o parPNLTest-CreateBNets.obj `if test -f 'CreateBNets.cpp'; then $(CYGPATH_W) 'CreateBNets.cpp'; else $(CYGPATH_W) '$(srcdir)/CreateBNets.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/parPNLTest-CreateBNets.Tpo $(DEPDIR)/parPNLTest-CreateBNets.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='CreateBNets.cpp' object='parPNLTest-CreateBNets.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(parPNLTest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o parPNLTest-CreateBNets.obj `if test -f 'CreateBNets.cpp'; then $(CYGPATH_W) 'CreateBNets.cpp'; else $(CYGPATH_W) '$(srcdir)/CreateBNets.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

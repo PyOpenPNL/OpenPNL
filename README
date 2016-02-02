@@ -2,6 +2,14 @@
 --  Revised 2016, now with working autoreconf for modern linux  --
 --                  http://inferred.info                        --
 ------------------------------------------------------------------
+--
+--   new build proccess:
+--     [optional] ./autogen.sh
+--     ./configure
+--     make
+--     sudo make install
+--
+------------------------------------------------------------------
  PNL -- Probabilistic Networks Library. Release 1.0.  31-July-2006
 ------------------------------------------------------------------
 

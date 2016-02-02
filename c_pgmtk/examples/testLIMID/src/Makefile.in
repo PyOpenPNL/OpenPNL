@@ -90,10 +90,13 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_TestLIMID_OBJECTS = TestLIMID.$(OBJEXT) LoadIDNet.$(OBJEXT) \
-	SamplesOfIDNet.$(OBJEXT)
+am_TestLIMID_OBJECTS = TestLIMID-TestLIMID.$(OBJEXT) \
+	TestLIMID-LoadIDNet.$(OBJEXT) \
+	TestLIMID-SamplesOfIDNet.$(OBJEXT)
 TestLIMID_OBJECTS = $(am_TestLIMID_OBJECTS)
-TestLIMID_DEPENDENCIES = $(PNL_LIBS)
+am__DEPENDENCIES_1 = $(PNLBUILDD)/src/libpnl.la \
+	$(top_builddir)/cxcore/cxcore/src/libcxcore.la
+TestLIMID_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
@@ -294,12 +297,12 @@ target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/
+AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/ -Wno-vla
 PNLD = $(top_srcdir)/c_pgmtk
 PNLBUILDD = $(top_builddir)/c_pgmtk
-PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.a
+PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.la -ldl
 PNL_INCL = -I$(top_srcdir)/cxcore/cxcore/include -I$(PNLD)/include -I$(PNLD)/src/include/cart -I$(PNLD)/src/include
-TestLIMID_CFLAGS = $(PNL_INCL) -I$(srcdir)/../include
+TestLIMID_CPPFLAGS = $(PNL_INCL) -I$(srcdir)/../include
 TestLIMID_SOURCES = TestLIMID.cpp LoadIDNet.cpp SamplesOfIDNet.cpp
 TestLIMID_LDADD = $(PNL_LIBS)
 all: all-am
@@ -397,9 +400,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/LoadIDNet.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SamplesOfIDNet.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TestLIMID.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TestLIMID-LoadIDNet.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TestLIMID-SamplesOfIDNet.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TestLIMID-TestLIMID.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -421,6 +424,48 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LTCXXCOMPILE) -c -o $@ $<
+
+TestLIMID-TestLIMID.o: TestLIMID.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestLIMID-TestLIMID.o -MD -MP -MF $(DEPDIR)/TestLIMID-TestLIMID.Tpo -c -o TestLIMID-TestLIMID.o `test -f 'TestLIMID.cpp' || echo '$(srcdir)/'`TestLIMID.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestLIMID-TestLIMID.Tpo $(DEPDIR)/TestLIMID-TestLIMID.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='TestLIMID.cpp' object='TestLIMID-TestLIMID.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestLIMID-TestLIMID.o `test -f 'TestLIMID.cpp' || echo '$(srcdir)/'`TestLIMID.cpp
+
+TestLIMID-TestLIMID.obj: TestLIMID.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestLIMID-TestLIMID.obj -MD -MP -MF $(DEPDIR)/TestLIMID-TestLIMID.Tpo -c -o TestLIMID-TestLIMID.obj `if test -f 'TestLIMID.cpp'; then $(CYGPATH_W) 'TestLIMID.cpp'; else $(CYGPATH_W) '$(srcdir)/TestLIMID.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestLIMID-TestLIMID.Tpo $(DEPDIR)/TestLIMID-TestLIMID.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='TestLIMID.cpp' object='TestLIMID-TestLIMID.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestLIMID-TestLIMID.obj `if test -f 'TestLIMID.cpp'; then $(CYGPATH_W) 'TestLIMID.cpp'; else $(CYGPATH_W) '$(srcdir)/TestLIMID.cpp'; fi`
+
+TestLIMID-LoadIDNet.o: LoadIDNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestLIMID-LoadIDNet.o -MD -MP -MF $(DEPDIR)/TestLIMID-LoadIDNet.Tpo -c -o TestLIMID-LoadIDNet.o `test -f 'LoadIDNet.cpp' || echo '$(srcdir)/'`LoadIDNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestLIMID-LoadIDNet.Tpo $(DEPDIR)/TestLIMID-LoadIDNet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='LoadIDNet.cpp' object='TestLIMID-LoadIDNet.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestLIMID-LoadIDNet.o `test -f 'LoadIDNet.cpp' || echo '$(srcdir)/'`LoadIDNet.cpp
+
+TestLIMID-LoadIDNet.obj: LoadIDNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestLIMID-LoadIDNet.obj -MD -MP -MF $(DEPDIR)/TestLIMID-LoadIDNet.Tpo -c -o TestLIMID-LoadIDNet.obj `if test -f 'LoadIDNet.cpp'; then $(CYGPATH_W) 'LoadIDNet.cpp'; else $(CYGPATH_W) '$(srcdir)/LoadIDNet.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestLIMID-LoadIDNet.Tpo $(DEPDIR)/TestLIMID-LoadIDNet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='LoadIDNet.cpp' object='TestLIMID-LoadIDNet.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestLIMID-LoadIDNet.obj `if test -f 'LoadIDNet.cpp'; then $(CYGPATH_W) 'LoadIDNet.cpp'; else $(CYGPATH_W) '$(srcdir)/LoadIDNet.cpp'; fi`
+
+TestLIMID-SamplesOfIDNet.o: SamplesOfIDNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestLIMID-SamplesOfIDNet.o -MD -MP -MF $(DEPDIR)/TestLIMID-SamplesOfIDNet.Tpo -c -o TestLIMID-SamplesOfIDNet.o `test -f 'SamplesOfIDNet.cpp' || echo '$(srcdir)/'`SamplesOfIDNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestLIMID-SamplesOfIDNet.Tpo $(DEPDIR)/TestLIMID-SamplesOfIDNet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='SamplesOfIDNet.cpp' object='TestLIMID-SamplesOfIDNet.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestLIMID-SamplesOfIDNet.o `test -f 'SamplesOfIDNet.cpp' || echo '$(srcdir)/'`SamplesOfIDNet.cpp
+
+TestLIMID-SamplesOfIDNet.obj: SamplesOfIDNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestLIMID-SamplesOfIDNet.obj -MD -MP -MF $(DEPDIR)/TestLIMID-SamplesOfIDNet.Tpo -c -o TestLIMID-SamplesOfIDNet.obj `if test -f 'SamplesOfIDNet.cpp'; then $(CYGPATH_W) 'SamplesOfIDNet.cpp'; else $(CYGPATH_W) '$(srcdir)/SamplesOfIDNet.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestLIMID-SamplesOfIDNet.Tpo $(DEPDIR)/TestLIMID-SamplesOfIDNet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='SamplesOfIDNet.cpp' object='TestLIMID-SamplesOfIDNet.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestLIMID_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestLIMID-SamplesOfIDNet.obj `if test -f 'SamplesOfIDNet.cpp'; then $(CYGPATH_W) 'SamplesOfIDNet.cpp'; else $(CYGPATH_W) '$(srcdir)/SamplesOfIDNet.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

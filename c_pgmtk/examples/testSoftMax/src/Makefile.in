@@ -90,10 +90,12 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_TestSoftMax_OBJECTS = TestSoftMax.$(OBJEXT) \
-	SamplesOfSMNet.$(OBJEXT)
+am_TestSoftMax_OBJECTS = TestSoftMax-TestSoftMax.$(OBJEXT) \
+	TestSoftMax-SamplesOfSMNet.$(OBJEXT)
 TestSoftMax_OBJECTS = $(am_TestSoftMax_OBJECTS)
-TestSoftMax_DEPENDENCIES = $(PNL_LIBS)
+am__DEPENDENCIES_1 = $(PNLBUILDD)/src/libpnl.la \
+	$(top_builddir)/cxcore/cxcore/src/libcxcore.la
+TestSoftMax_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
@@ -294,12 +296,12 @@ target_vendor = @target_vendor@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/
+AM_CPPFLAGS = -x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/ -Wno-vla
 PNLD = $(top_srcdir)/c_pgmtk
 PNLBUILDD = $(top_builddir)/c_pgmtk
-PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.a
+PNL_LIBS = $(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.la -ldl
 PNL_INCL = -I$(top_srcdir)/cxcore/cxcore/include -I$(PNLD)/include -I$(PNLD)/src/include/cart -I$(PNLD)/src/include
-TestSoftMax_CFLAGS = $(PNL_INCL) -I$(srcdir)/../include
+TestSoftMax_CPPFLAGS = $(PNL_INCL) -I$(srcdir)/../include
 TestSoftMax_SOURCES = TestSoftMax.cpp SamplesOfSMNet.cpp
 TestSoftMax_LDADD = $(PNL_LIBS)
 all: all-am
@@ -397,8 +399,8 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SamplesOfSMNet.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TestSoftMax.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TestSoftMax-SamplesOfSMNet.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TestSoftMax-TestSoftMax.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -420,6 +422,34 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LTCXXCOMPILE) -c -o $@ $<
+
+TestSoftMax-TestSoftMax.o: TestSoftMax.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestSoftMax_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestSoftMax-TestSoftMax.o -MD -MP -MF $(DEPDIR)/TestSoftMax-TestSoftMax.Tpo -c -o TestSoftMax-TestSoftMax.o `test -f 'TestSoftMax.cpp' || echo '$(srcdir)/'`TestSoftMax.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestSoftMax-TestSoftMax.Tpo $(DEPDIR)/TestSoftMax-TestSoftMax.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='TestSoftMax.cpp' object='TestSoftMax-TestSoftMax.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestSoftMax_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestSoftMax-TestSoftMax.o `test -f 'TestSoftMax.cpp' || echo '$(srcdir)/'`TestSoftMax.cpp
+
+TestSoftMax-TestSoftMax.obj: TestSoftMax.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestSoftMax_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestSoftMax-TestSoftMax.obj -MD -MP -MF $(DEPDIR)/TestSoftMax-TestSoftMax.Tpo -c -o TestSoftMax-TestSoftMax.obj `if test -f 'TestSoftMax.cpp'; then $(CYGPATH_W) 'TestSoftMax.cpp'; else $(CYGPATH_W) '$(srcdir)/TestSoftMax.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestSoftMax-TestSoftMax.Tpo $(DEPDIR)/TestSoftMax-TestSoftMax.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='TestSoftMax.cpp' object='TestSoftMax-TestSoftMax.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestSoftMax_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestSoftMax-TestSoftMax.obj `if test -f 'TestSoftMax.cpp'; then $(CYGPATH_W) 'TestSoftMax.cpp'; else $(CYGPATH_W) '$(srcdir)/TestSoftMax.cpp'; fi`
+
+TestSoftMax-SamplesOfSMNet.o: SamplesOfSMNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestSoftMax_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestSoftMax-SamplesOfSMNet.o -MD -MP -MF $(DEPDIR)/TestSoftMax-SamplesOfSMNet.Tpo -c -o TestSoftMax-SamplesOfSMNet.o `test -f 'SamplesOfSMNet.cpp' || echo '$(srcdir)/'`SamplesOfSMNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestSoftMax-SamplesOfSMNet.Tpo $(DEPDIR)/TestSoftMax-SamplesOfSMNet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='SamplesOfSMNet.cpp' object='TestSoftMax-SamplesOfSMNet.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestSoftMax_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestSoftMax-SamplesOfSMNet.o `test -f 'SamplesOfSMNet.cpp' || echo '$(srcdir)/'`SamplesOfSMNet.cpp
+
+TestSoftMax-SamplesOfSMNet.obj: SamplesOfSMNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestSoftMax_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT TestSoftMax-SamplesOfSMNet.obj -MD -MP -MF $(DEPDIR)/TestSoftMax-SamplesOfSMNet.Tpo -c -o TestSoftMax-SamplesOfSMNet.obj `if test -f 'SamplesOfSMNet.cpp'; then $(CYGPATH_W) 'SamplesOfSMNet.cpp'; else $(CYGPATH_W) '$(srcdir)/SamplesOfSMNet.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/TestSoftMax-SamplesOfSMNet.Tpo $(DEPDIR)/TestSoftMax-SamplesOfSMNet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='SamplesOfSMNet.cpp' object='TestSoftMax-SamplesOfSMNet.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(TestSoftMax_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o TestSoftMax-SamplesOfSMNet.obj `if test -f 'SamplesOfSMNet.cpp'; then $(CYGPATH_W) 'SamplesOfSMNet.cpp'; else $(CYGPATH_W) '$(srcdir)/SamplesOfSMNet.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

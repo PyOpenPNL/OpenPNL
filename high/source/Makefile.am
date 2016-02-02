@@ -5,7 +5,7 @@ include $(top_srcdir)/Makefile.incl
 
 lib_LTLIBRARIES = libhigh.la
 
-libhigh_la_CFLAGS = $(PNL_INCL) -I$(srcdir)/../include
+libhigh_la_CPPFLAGS = $(PNL_INCL) -I$(srcdir)/../include
 libhigh_la_SOURCES =      \
      BNet.cpp     \
      BNetCB.cpp     \
@@ -33,5 +33,5 @@ libhigh_la_SOURCES =      \
      pnlWGraph.cpp     \
      pnlWProbabilisticNet.cpp
 
-libhigh_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) @LD_FLAGS@
+libhigh_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) 
 

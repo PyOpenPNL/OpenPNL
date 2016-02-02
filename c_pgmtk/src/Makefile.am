@@ -134,5 +134,5 @@ libpnl_la_SOURCES=      \
      pnlXMLRead.cpp     \
      pnlXMLWrite.cpp
 
-libpnl_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) @LD_FLAGS@
+libpnl_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)
 

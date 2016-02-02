@@ -1,0 +1,3 @@
+libtoolize
+autoreconf
+
