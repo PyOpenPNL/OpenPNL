@@ -1,5 +1,5 @@
 
-AM_CPPFLAGS=-x c++ $(DEBUG)
+AM_CPPFLAGS=-x c++ $(DEBUG) -I$(top_srcdir)/cxcore/cxcore/include/
 PNLD=$(top_srcdir)/c_pgmtk
 PNLBUILDD=$(top_builddir)/c_pgmtk
 PNL_LIBS=$(PNLBUILDD)/src/libpnl.la $(top_builddir)/cxcore/cxcore/src/libcxcore.a
