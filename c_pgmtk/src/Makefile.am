@@ -11,7 +11,7 @@ SOSUBMINOR=@PNLSUBMINOR@
 
 lib_LTLIBRARIES=libpnl.la
 
-libpnl_la_CFLAGS=$(PNL_INCL)
+libpnl_la_CPPFLAGS=$(PNL_INCL) -Wno-vla
 libpnl_la_SOURCES=      \
      cvcart.cpp     \
      cvsvd.c     \

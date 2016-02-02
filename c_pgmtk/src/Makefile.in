@@ -117,54 +117,85 @@ am__uninstall_files_from_dir = { \
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libpnl_la_LIBADD =
-am_libpnl_la_OBJECTS = cvcart.lo libpnl_la-cvsvd.lo dbginfo.lo \
-	memtrack.lo pnl1_5SliceInferenceEngine.lo \
-	pnl1_5SliceJtreeInferenceEngine.lo pnl2DBitwiseMatrix.lo \
-	pnl2DNumericDenseMatrix.lo pnl2TBNInferenceEngine.lo \
-	pnl2TPFInferenceEngine.lo pnlAllocator.lo \
-	pnlBayesLearningEngine.lo pnlBicLearningEngine.lo \
-	pnlBKInferenceEngine.lo pnlBNet.lo \
-	pnlCondGaussianDistribFun.lo pnlCondSoftMaxDistribFun.lo \
-	pnlConfig.lo pnlContext.lo pnlContextLoad.lo \
-	pnlContextPersistence.lo pnlContextSave.lo pnlCoverage.lo \
-	pnlCPD.lo pnlDAG.lo pnlDBN.lo pnlDenseMatrix.lo \
-	pnlDiagnostics.lo pnlDistribFun.lo pnlDynamicGraphicalModel.lo \
-	pnlDynamicInferenceEngine.lo pnlDynamicLearningEngine.lo \
-	pnlEmLearningEngine.lo pnlEmLearningEngineDBN.lo \
-	pnlEvidence.lo pnlExampleModels.lo pnlException.lo \
-	pnlExInferenceEngine.lo pnlFactor.lo pnlFactorGraph.lo \
-	pnlFactors.lo pnlFakePtr.lo pnlFGSumMaxInferenceEngine.lo \
-	pnlGaussianCPD.lo pnlGaussianDistribFun.lo \
-	pnlGaussianPotential.lo pnlGibbsSamplingInferenceEngine.lo \
-	pnlGibbsWithAnnealingInferenceEngine.lo pnlGraph.lo \
-	pnlGraphicalModel.lo pnlGroup.lo pnli2DNumericDenseMatrix.lo \
-	pnlIDNet.lo pnlIDPotential.lo pnlIDTabularPotential.lo \
-	pnlInferenceEngine.lo pnliNumericDenseMatrix.lo \
-	pnliNumericSparseMatrix.lo pnlJtreeInferenceEngine.lo \
-	pnlJunctionTree.lo pnlLearningEngine.lo pnlLIMIDInfEngine.lo \
-	pnlLog.lo pnlLogDriver.lo pnlLogMultiplexor.lo pnlLogUsing.lo \
-	pnlLWSamplingInferenceEngine.lo pnlMatrix.lo \
-	pnlMatrixIterator.lo pnlMixtureGaussianCPD.lo \
-	pnlMlDynamicStructLearn.lo pnlMlStaticStructLearn.lo \
-	pnlMlStaticStructLearnHC.lo pnlMNet.lo pnlModelDomain.lo \
-	pnlMRF2.lo pnlNaiveInferenceEngine.lo pnlNodeType.lo \
-	pnlNodeValues.lo pnlNumericDenseMatrix.lo pnlObject.lo \
-	pnlObjHandler.lo pnlParConfig.lo pnlParEmLearningEngine.lo \
-	pnlParGibbsSamplingInferenceEngine.lo \
-	pnlParJtreeInferenceEngine.lo pnlParNewDelete.lo \
-	pnlParPearlInferenceEngine.lo pnlPearlInferenceEngine.lo \
-	pnlPersistCover.lo pnlPersistCPD.lo pnlPersistDistribFun.lo \
-	pnlPersistence.lo pnlPersistGraph.lo pnlPersistModel.lo \
-	pnlPersistModelDomain.lo pnlPersistTypes.lo pnlpnlType.lo \
-	pnlPotential.lo pnlReferenceCounter.lo pnlRng.lo \
-	pnlSamplingInferenceEngine.lo pnlScalarDistribFun.lo \
-	pnlScalarPotential.lo pnlSoftMaxCPD.lo pnlSoftMaxDistribFun.lo \
-	pnlSparseMatrix.lo pnlSpecPearlInferenceEngine.lo \
-	pnlStaticGraphicalModel.lo pnlStaticLearningEngine.lo \
-	pnlStaticStructLearnSEM.lo pnlString.lo pnlTabularCPD.lo \
-	pnlTabularDistribFun.lo pnlTabularPotential.lo pnlTimer.lo \
-	pnlTreeCPD.lo pnlTreeDistribFun.lo pnlXMLRead.lo \
-	pnlXMLWrite.lo
+am_libpnl_la_OBJECTS = libpnl_la-cvcart.lo libpnl_la-cvsvd.lo \
+	libpnl_la-dbginfo.lo libpnl_la-memtrack.lo \
+	libpnl_la-pnl1_5SliceInferenceEngine.lo \
+	libpnl_la-pnl1_5SliceJtreeInferenceEngine.lo \
+	libpnl_la-pnl2DBitwiseMatrix.lo \
+	libpnl_la-pnl2DNumericDenseMatrix.lo \
+	libpnl_la-pnl2TBNInferenceEngine.lo \
+	libpnl_la-pnl2TPFInferenceEngine.lo libpnl_la-pnlAllocator.lo \
+	libpnl_la-pnlBayesLearningEngine.lo \
+	libpnl_la-pnlBicLearningEngine.lo \
+	libpnl_la-pnlBKInferenceEngine.lo libpnl_la-pnlBNet.lo \
+	libpnl_la-pnlCondGaussianDistribFun.lo \
+	libpnl_la-pnlCondSoftMaxDistribFun.lo libpnl_la-pnlConfig.lo \
+	libpnl_la-pnlContext.lo libpnl_la-pnlContextLoad.lo \
+	libpnl_la-pnlContextPersistence.lo libpnl_la-pnlContextSave.lo \
+	libpnl_la-pnlCoverage.lo libpnl_la-pnlCPD.lo \
+	libpnl_la-pnlDAG.lo libpnl_la-pnlDBN.lo \
+	libpnl_la-pnlDenseMatrix.lo libpnl_la-pnlDiagnostics.lo \
+	libpnl_la-pnlDistribFun.lo \
+	libpnl_la-pnlDynamicGraphicalModel.lo \
+	libpnl_la-pnlDynamicInferenceEngine.lo \
+	libpnl_la-pnlDynamicLearningEngine.lo \
+	libpnl_la-pnlEmLearningEngine.lo \
+	libpnl_la-pnlEmLearningEngineDBN.lo libpnl_la-pnlEvidence.lo \
+	libpnl_la-pnlExampleModels.lo libpnl_la-pnlException.lo \
+	libpnl_la-pnlExInferenceEngine.lo libpnl_la-pnlFactor.lo \
+	libpnl_la-pnlFactorGraph.lo libpnl_la-pnlFactors.lo \
+	libpnl_la-pnlFakePtr.lo \
+	libpnl_la-pnlFGSumMaxInferenceEngine.lo \
+	libpnl_la-pnlGaussianCPD.lo libpnl_la-pnlGaussianDistribFun.lo \
+	libpnl_la-pnlGaussianPotential.lo \
+	libpnl_la-pnlGibbsSamplingInferenceEngine.lo \
+	libpnl_la-pnlGibbsWithAnnealingInferenceEngine.lo \
+	libpnl_la-pnlGraph.lo libpnl_la-pnlGraphicalModel.lo \
+	libpnl_la-pnlGroup.lo libpnl_la-pnli2DNumericDenseMatrix.lo \
+	libpnl_la-pnlIDNet.lo libpnl_la-pnlIDPotential.lo \
+	libpnl_la-pnlIDTabularPotential.lo \
+	libpnl_la-pnlInferenceEngine.lo \
+	libpnl_la-pnliNumericDenseMatrix.lo \
+	libpnl_la-pnliNumericSparseMatrix.lo \
+	libpnl_la-pnlJtreeInferenceEngine.lo \
+	libpnl_la-pnlJunctionTree.lo libpnl_la-pnlLearningEngine.lo \
+	libpnl_la-pnlLIMIDInfEngine.lo libpnl_la-pnlLog.lo \
+	libpnl_la-pnlLogDriver.lo libpnl_la-pnlLogMultiplexor.lo \
+	libpnl_la-pnlLogUsing.lo \
+	libpnl_la-pnlLWSamplingInferenceEngine.lo \
+	libpnl_la-pnlMatrix.lo libpnl_la-pnlMatrixIterator.lo \
+	libpnl_la-pnlMixtureGaussianCPD.lo \
+	libpnl_la-pnlMlDynamicStructLearn.lo \
+	libpnl_la-pnlMlStaticStructLearn.lo \
+	libpnl_la-pnlMlStaticStructLearnHC.lo libpnl_la-pnlMNet.lo \
+	libpnl_la-pnlModelDomain.lo libpnl_la-pnlMRF2.lo \
+	libpnl_la-pnlNaiveInferenceEngine.lo libpnl_la-pnlNodeType.lo \
+	libpnl_la-pnlNodeValues.lo libpnl_la-pnlNumericDenseMatrix.lo \
+	libpnl_la-pnlObject.lo libpnl_la-pnlObjHandler.lo \
+	libpnl_la-pnlParConfig.lo libpnl_la-pnlParEmLearningEngine.lo \
+	libpnl_la-pnlParGibbsSamplingInferenceEngine.lo \
+	libpnl_la-pnlParJtreeInferenceEngine.lo \
+	libpnl_la-pnlParNewDelete.lo \
+	libpnl_la-pnlParPearlInferenceEngine.lo \
+	libpnl_la-pnlPearlInferenceEngine.lo \
+	libpnl_la-pnlPersistCover.lo libpnl_la-pnlPersistCPD.lo \
+	libpnl_la-pnlPersistDistribFun.lo libpnl_la-pnlPersistence.lo \
+	libpnl_la-pnlPersistGraph.lo libpnl_la-pnlPersistModel.lo \
+	libpnl_la-pnlPersistModelDomain.lo \
+	libpnl_la-pnlPersistTypes.lo libpnl_la-pnlpnlType.lo \
+	libpnl_la-pnlPotential.lo libpnl_la-pnlReferenceCounter.lo \
+	libpnl_la-pnlRng.lo libpnl_la-pnlSamplingInferenceEngine.lo \
+	libpnl_la-pnlScalarDistribFun.lo \
+	libpnl_la-pnlScalarPotential.lo libpnl_la-pnlSoftMaxCPD.lo \
+	libpnl_la-pnlSoftMaxDistribFun.lo libpnl_la-pnlSparseMatrix.lo \
+	libpnl_la-pnlSpecPearlInferenceEngine.lo \
+	libpnl_la-pnlStaticGraphicalModel.lo \
+	libpnl_la-pnlStaticLearningEngine.lo \
+	libpnl_la-pnlStaticStructLearnSEM.lo libpnl_la-pnlString.lo \
+	libpnl_la-pnlTabularCPD.lo libpnl_la-pnlTabularDistribFun.lo \
+	libpnl_la-pnlTabularPotential.lo libpnl_la-pnlTimer.lo \
+	libpnl_la-pnlTreeCPD.lo libpnl_la-pnlTreeDistribFun.lo \
+	libpnl_la-pnlXMLRead.lo libpnl_la-pnlXMLWrite.lo
 libpnl_la_OBJECTS = $(am_libpnl_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -439,7 +470,7 @@ SOMAJOR = @PNLMAJOR@
 SOMINOR = @PNLMINOR@
 SOSUBMINOR = @PNLSUBMINOR@
 lib_LTLIBRARIES = libpnl.la
-libpnl_la_CFLAGS = $(PNL_INCL)
+libpnl_la_CPPFLAGS = $(PNL_INCL) -Wno-vla
 libpnl_la_SOURCES = \
      cvcart.cpp     \
      cvsvd.c     \
@@ -643,126 +674,126 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cvcart.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dbginfo.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-cvcart.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-cvsvd.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/memtrack.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnl1_5SliceInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnl1_5SliceJtreeInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnl2DBitwiseMatrix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnl2DNumericDenseMatrix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnl2TBNInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnl2TPFInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlAllocator.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlBKInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlBNet.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlBayesLearningEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlBicLearningEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlCPD.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlCondGaussianDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlCondSoftMaxDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlConfig.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlContext.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlContextLoad.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlContextPersistence.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlContextSave.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlCoverage.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlDAG.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlDBN.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlDenseMatrix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlDiagnostics.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlDynamicGraphicalModel.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlDynamicInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlDynamicLearningEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlEmLearningEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlEmLearningEngineDBN.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlEvidence.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlExInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlExampleModels.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlException.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlFGSumMaxInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlFactor.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlFactorGraph.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlFactors.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlFakePtr.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlGaussianCPD.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlGaussianDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlGaussianPotential.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlGibbsSamplingInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlGibbsWithAnnealingInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlGraph.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlGraphicalModel.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlGroup.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlIDNet.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlIDPotential.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlIDTabularPotential.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlJtreeInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlJunctionTree.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlLIMIDInfEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlLWSamplingInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlLearningEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlLog.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlLogDriver.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlLogMultiplexor.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlLogUsing.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlMNet.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlMRF2.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlMatrix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlMatrixIterator.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlMixtureGaussianCPD.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlMlDynamicStructLearn.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlMlStaticStructLearn.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlMlStaticStructLearnHC.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlModelDomain.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlNaiveInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlNodeType.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlNodeValues.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlNumericDenseMatrix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlObjHandler.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlObject.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlParConfig.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlParEmLearningEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlParGibbsSamplingInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlParJtreeInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlParNewDelete.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlParPearlInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPearlInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPersistCPD.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPersistCover.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPersistDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPersistGraph.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPersistModel.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPersistModelDomain.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPersistTypes.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPersistence.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlPotential.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlReferenceCounter.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlRng.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlSamplingInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlScalarDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlScalarPotential.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlSoftMaxCPD.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlSoftMaxDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlSparseMatrix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlSpecPearlInferenceEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlStaticGraphicalModel.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlStaticLearningEngine.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlStaticStructLearnSEM.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlString.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlTabularCPD.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlTabularDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlTabularPotential.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlTimer.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlTreeCPD.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlTreeDistribFun.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlXMLRead.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlXMLWrite.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnli2DNumericDenseMatrix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnliNumericDenseMatrix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnliNumericSparseMatrix.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pnlpnlType.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-dbginfo.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-memtrack.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnl1_5SliceInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnl1_5SliceJtreeInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnl2DBitwiseMatrix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnl2DNumericDenseMatrix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnl2TBNInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnl2TPFInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlAllocator.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlBKInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlBNet.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlBayesLearningEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlBicLearningEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlCPD.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlCondGaussianDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlCondSoftMaxDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlConfig.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlContext.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlContextLoad.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlContextPersistence.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlContextSave.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlCoverage.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlDAG.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlDBN.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlDenseMatrix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlDiagnostics.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlDynamicGraphicalModel.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlDynamicInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlDynamicLearningEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlEmLearningEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlEmLearningEngineDBN.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlEvidence.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlExInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlExampleModels.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlException.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlFGSumMaxInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlFactor.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlFactorGraph.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlFactors.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlFakePtr.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlGaussianCPD.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlGaussianDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlGaussianPotential.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlGibbsSamplingInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlGibbsWithAnnealingInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlGraph.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlGraphicalModel.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlGroup.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlIDNet.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlIDPotential.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlIDTabularPotential.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlJtreeInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlJunctionTree.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlLIMIDInfEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlLWSamplingInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlLearningEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlLog.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlLogDriver.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlLogMultiplexor.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlLogUsing.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlMNet.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlMRF2.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlMatrix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlMatrixIterator.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlMixtureGaussianCPD.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlMlDynamicStructLearn.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlMlStaticStructLearn.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlMlStaticStructLearnHC.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlModelDomain.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlNaiveInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlNodeType.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlNodeValues.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlNumericDenseMatrix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlObjHandler.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlObject.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlParConfig.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlParEmLearningEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlParGibbsSamplingInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlParJtreeInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlParNewDelete.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlParPearlInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPearlInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPersistCPD.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPersistCover.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPersistDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPersistGraph.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPersistModel.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPersistModelDomain.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPersistTypes.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPersistence.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlPotential.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlReferenceCounter.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlRng.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlSamplingInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlScalarDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlScalarPotential.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlSoftMaxCPD.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlSoftMaxDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlSparseMatrix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlSpecPearlInferenceEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlStaticGraphicalModel.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlStaticLearningEngine.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlStaticStructLearnSEM.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlString.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlTabularCPD.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlTabularDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlTabularPotential.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlTimer.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlTreeCPD.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlTreeDistribFun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlXMLRead.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlXMLWrite.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnli2DNumericDenseMatrix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnliNumericDenseMatrix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnliNumericSparseMatrix.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpnl_la-pnlpnlType.Plo@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -786,11 +817,11 @@ distclean-compile:
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
 libpnl_la-cvsvd.lo: cvsvd.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libpnl_la_CFLAGS) $(CFLAGS) -MT libpnl_la-cvsvd.lo -MD -MP -MF $(DEPDIR)/libpnl_la-cvsvd.Tpo -c -o libpnl_la-cvsvd.lo `test -f 'cvsvd.c' || echo '$(srcdir)/'`cvsvd.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libpnl_la-cvsvd.lo -MD -MP -MF $(DEPDIR)/libpnl_la-cvsvd.Tpo -c -o libpnl_la-cvsvd.lo `test -f 'cvsvd.c' || echo '$(srcdir)/'`cvsvd.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-cvsvd.Tpo $(DEPDIR)/libpnl_la-cvsvd.Plo
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='cvsvd.c' object='libpnl_la-cvsvd.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libpnl_la_CFLAGS) $(CFLAGS) -c -o libpnl_la-cvsvd.lo `test -f 'cvsvd.c' || echo '$(srcdir)/'`cvsvd.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libpnl_la-cvsvd.lo `test -f 'cvsvd.c' || echo '$(srcdir)/'`cvsvd.c
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -812,6 +843,839 @@ libpnl_la-cvsvd.lo: cvsvd.c
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LTCXXCOMPILE) -c -o $@ $<
+
+libpnl_la-cvcart.lo: cvcart.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-cvcart.lo -MD -MP -MF $(DEPDIR)/libpnl_la-cvcart.Tpo -c -o libpnl_la-cvcart.lo `test -f 'cvcart.cpp' || echo '$(srcdir)/'`cvcart.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-cvcart.Tpo $(DEPDIR)/libpnl_la-cvcart.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='cvcart.cpp' object='libpnl_la-cvcart.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-cvcart.lo `test -f 'cvcart.cpp' || echo '$(srcdir)/'`cvcart.cpp
+
+libpnl_la-dbginfo.lo: dbginfo.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-dbginfo.lo -MD -MP -MF $(DEPDIR)/libpnl_la-dbginfo.Tpo -c -o libpnl_la-dbginfo.lo `test -f 'dbginfo.cpp' || echo '$(srcdir)/'`dbginfo.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-dbginfo.Tpo $(DEPDIR)/libpnl_la-dbginfo.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='dbginfo.cpp' object='libpnl_la-dbginfo.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-dbginfo.lo `test -f 'dbginfo.cpp' || echo '$(srcdir)/'`dbginfo.cpp
+
+libpnl_la-memtrack.lo: memtrack.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-memtrack.lo -MD -MP -MF $(DEPDIR)/libpnl_la-memtrack.Tpo -c -o libpnl_la-memtrack.lo `test -f 'memtrack.cpp' || echo '$(srcdir)/'`memtrack.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-memtrack.Tpo $(DEPDIR)/libpnl_la-memtrack.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='memtrack.cpp' object='libpnl_la-memtrack.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-memtrack.lo `test -f 'memtrack.cpp' || echo '$(srcdir)/'`memtrack.cpp
+
+libpnl_la-pnl1_5SliceInferenceEngine.lo: pnl1_5SliceInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnl1_5SliceInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnl1_5SliceInferenceEngine.Tpo -c -o libpnl_la-pnl1_5SliceInferenceEngine.lo `test -f 'pnl1_5SliceInferenceEngine.cpp' || echo '$(srcdir)/'`pnl1_5SliceInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnl1_5SliceInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnl1_5SliceInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnl1_5SliceInferenceEngine.cpp' object='libpnl_la-pnl1_5SliceInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnl1_5SliceInferenceEngine.lo `test -f 'pnl1_5SliceInferenceEngine.cpp' || echo '$(srcdir)/'`pnl1_5SliceInferenceEngine.cpp
+
+libpnl_la-pnl1_5SliceJtreeInferenceEngine.lo: pnl1_5SliceJtreeInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnl1_5SliceJtreeInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnl1_5SliceJtreeInferenceEngine.Tpo -c -o libpnl_la-pnl1_5SliceJtreeInferenceEngine.lo `test -f 'pnl1_5SliceJtreeInferenceEngine.cpp' || echo '$(srcdir)/'`pnl1_5SliceJtreeInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnl1_5SliceJtreeInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnl1_5SliceJtreeInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnl1_5SliceJtreeInferenceEngine.cpp' object='libpnl_la-pnl1_5SliceJtreeInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnl1_5SliceJtreeInferenceEngine.lo `test -f 'pnl1_5SliceJtreeInferenceEngine.cpp' || echo '$(srcdir)/'`pnl1_5SliceJtreeInferenceEngine.cpp
+
+libpnl_la-pnl2DBitwiseMatrix.lo: pnl2DBitwiseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnl2DBitwiseMatrix.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnl2DBitwiseMatrix.Tpo -c -o libpnl_la-pnl2DBitwiseMatrix.lo `test -f 'pnl2DBitwiseMatrix.cpp' || echo '$(srcdir)/'`pnl2DBitwiseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnl2DBitwiseMatrix.Tpo $(DEPDIR)/libpnl_la-pnl2DBitwiseMatrix.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnl2DBitwiseMatrix.cpp' object='libpnl_la-pnl2DBitwiseMatrix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnl2DBitwiseMatrix.lo `test -f 'pnl2DBitwiseMatrix.cpp' || echo '$(srcdir)/'`pnl2DBitwiseMatrix.cpp
+
+libpnl_la-pnl2DNumericDenseMatrix.lo: pnl2DNumericDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnl2DNumericDenseMatrix.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnl2DNumericDenseMatrix.Tpo -c -o libpnl_la-pnl2DNumericDenseMatrix.lo `test -f 'pnl2DNumericDenseMatrix.cpp' || echo '$(srcdir)/'`pnl2DNumericDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnl2DNumericDenseMatrix.Tpo $(DEPDIR)/libpnl_la-pnl2DNumericDenseMatrix.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnl2DNumericDenseMatrix.cpp' object='libpnl_la-pnl2DNumericDenseMatrix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnl2DNumericDenseMatrix.lo `test -f 'pnl2DNumericDenseMatrix.cpp' || echo '$(srcdir)/'`pnl2DNumericDenseMatrix.cpp
+
+libpnl_la-pnl2TBNInferenceEngine.lo: pnl2TBNInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnl2TBNInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnl2TBNInferenceEngine.Tpo -c -o libpnl_la-pnl2TBNInferenceEngine.lo `test -f 'pnl2TBNInferenceEngine.cpp' || echo '$(srcdir)/'`pnl2TBNInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnl2TBNInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnl2TBNInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnl2TBNInferenceEngine.cpp' object='libpnl_la-pnl2TBNInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnl2TBNInferenceEngine.lo `test -f 'pnl2TBNInferenceEngine.cpp' || echo '$(srcdir)/'`pnl2TBNInferenceEngine.cpp
+
+libpnl_la-pnl2TPFInferenceEngine.lo: pnl2TPFInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnl2TPFInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnl2TPFInferenceEngine.Tpo -c -o libpnl_la-pnl2TPFInferenceEngine.lo `test -f 'pnl2TPFInferenceEngine.cpp' || echo '$(srcdir)/'`pnl2TPFInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnl2TPFInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnl2TPFInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnl2TPFInferenceEngine.cpp' object='libpnl_la-pnl2TPFInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnl2TPFInferenceEngine.lo `test -f 'pnl2TPFInferenceEngine.cpp' || echo '$(srcdir)/'`pnl2TPFInferenceEngine.cpp
+
+libpnl_la-pnlAllocator.lo: pnlAllocator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlAllocator.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlAllocator.Tpo -c -o libpnl_la-pnlAllocator.lo `test -f 'pnlAllocator.cpp' || echo '$(srcdir)/'`pnlAllocator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlAllocator.Tpo $(DEPDIR)/libpnl_la-pnlAllocator.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlAllocator.cpp' object='libpnl_la-pnlAllocator.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlAllocator.lo `test -f 'pnlAllocator.cpp' || echo '$(srcdir)/'`pnlAllocator.cpp
+
+libpnl_la-pnlBayesLearningEngine.lo: pnlBayesLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlBayesLearningEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlBayesLearningEngine.Tpo -c -o libpnl_la-pnlBayesLearningEngine.lo `test -f 'pnlBayesLearningEngine.cpp' || echo '$(srcdir)/'`pnlBayesLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlBayesLearningEngine.Tpo $(DEPDIR)/libpnl_la-pnlBayesLearningEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlBayesLearningEngine.cpp' object='libpnl_la-pnlBayesLearningEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlBayesLearningEngine.lo `test -f 'pnlBayesLearningEngine.cpp' || echo '$(srcdir)/'`pnlBayesLearningEngine.cpp
+
+libpnl_la-pnlBicLearningEngine.lo: pnlBicLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlBicLearningEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlBicLearningEngine.Tpo -c -o libpnl_la-pnlBicLearningEngine.lo `test -f 'pnlBicLearningEngine.cpp' || echo '$(srcdir)/'`pnlBicLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlBicLearningEngine.Tpo $(DEPDIR)/libpnl_la-pnlBicLearningEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlBicLearningEngine.cpp' object='libpnl_la-pnlBicLearningEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlBicLearningEngine.lo `test -f 'pnlBicLearningEngine.cpp' || echo '$(srcdir)/'`pnlBicLearningEngine.cpp
+
+libpnl_la-pnlBKInferenceEngine.lo: pnlBKInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlBKInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlBKInferenceEngine.Tpo -c -o libpnl_la-pnlBKInferenceEngine.lo `test -f 'pnlBKInferenceEngine.cpp' || echo '$(srcdir)/'`pnlBKInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlBKInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlBKInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlBKInferenceEngine.cpp' object='libpnl_la-pnlBKInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlBKInferenceEngine.lo `test -f 'pnlBKInferenceEngine.cpp' || echo '$(srcdir)/'`pnlBKInferenceEngine.cpp
+
+libpnl_la-pnlBNet.lo: pnlBNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlBNet.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlBNet.Tpo -c -o libpnl_la-pnlBNet.lo `test -f 'pnlBNet.cpp' || echo '$(srcdir)/'`pnlBNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlBNet.Tpo $(DEPDIR)/libpnl_la-pnlBNet.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlBNet.cpp' object='libpnl_la-pnlBNet.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlBNet.lo `test -f 'pnlBNet.cpp' || echo '$(srcdir)/'`pnlBNet.cpp
+
+libpnl_la-pnlCondGaussianDistribFun.lo: pnlCondGaussianDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlCondGaussianDistribFun.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlCondGaussianDistribFun.Tpo -c -o libpnl_la-pnlCondGaussianDistribFun.lo `test -f 'pnlCondGaussianDistribFun.cpp' || echo '$(srcdir)/'`pnlCondGaussianDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlCondGaussianDistribFun.Tpo $(DEPDIR)/libpnl_la-pnlCondGaussianDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlCondGaussianDistribFun.cpp' object='libpnl_la-pnlCondGaussianDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlCondGaussianDistribFun.lo `test -f 'pnlCondGaussianDistribFun.cpp' || echo '$(srcdir)/'`pnlCondGaussianDistribFun.cpp
+
+libpnl_la-pnlCondSoftMaxDistribFun.lo: pnlCondSoftMaxDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlCondSoftMaxDistribFun.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlCondSoftMaxDistribFun.Tpo -c -o libpnl_la-pnlCondSoftMaxDistribFun.lo `test -f 'pnlCondSoftMaxDistribFun.cpp' || echo '$(srcdir)/'`pnlCondSoftMaxDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlCondSoftMaxDistribFun.Tpo $(DEPDIR)/libpnl_la-pnlCondSoftMaxDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlCondSoftMaxDistribFun.cpp' object='libpnl_la-pnlCondSoftMaxDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlCondSoftMaxDistribFun.lo `test -f 'pnlCondSoftMaxDistribFun.cpp' || echo '$(srcdir)/'`pnlCondSoftMaxDistribFun.cpp
+
+libpnl_la-pnlConfig.lo: pnlConfig.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlConfig.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlConfig.Tpo -c -o libpnl_la-pnlConfig.lo `test -f 'pnlConfig.cpp' || echo '$(srcdir)/'`pnlConfig.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlConfig.Tpo $(DEPDIR)/libpnl_la-pnlConfig.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlConfig.cpp' object='libpnl_la-pnlConfig.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlConfig.lo `test -f 'pnlConfig.cpp' || echo '$(srcdir)/'`pnlConfig.cpp
+
+libpnl_la-pnlContext.lo: pnlContext.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlContext.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlContext.Tpo -c -o libpnl_la-pnlContext.lo `test -f 'pnlContext.cpp' || echo '$(srcdir)/'`pnlContext.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlContext.Tpo $(DEPDIR)/libpnl_la-pnlContext.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlContext.cpp' object='libpnl_la-pnlContext.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlContext.lo `test -f 'pnlContext.cpp' || echo '$(srcdir)/'`pnlContext.cpp
+
+libpnl_la-pnlContextLoad.lo: pnlContextLoad.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlContextLoad.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlContextLoad.Tpo -c -o libpnl_la-pnlContextLoad.lo `test -f 'pnlContextLoad.cpp' || echo '$(srcdir)/'`pnlContextLoad.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlContextLoad.Tpo $(DEPDIR)/libpnl_la-pnlContextLoad.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlContextLoad.cpp' object='libpnl_la-pnlContextLoad.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlContextLoad.lo `test -f 'pnlContextLoad.cpp' || echo '$(srcdir)/'`pnlContextLoad.cpp
+
+libpnl_la-pnlContextPersistence.lo: pnlContextPersistence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlContextPersistence.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlContextPersistence.Tpo -c -o libpnl_la-pnlContextPersistence.lo `test -f 'pnlContextPersistence.cpp' || echo '$(srcdir)/'`pnlContextPersistence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlContextPersistence.Tpo $(DEPDIR)/libpnl_la-pnlContextPersistence.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlContextPersistence.cpp' object='libpnl_la-pnlContextPersistence.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlContextPersistence.lo `test -f 'pnlContextPersistence.cpp' || echo '$(srcdir)/'`pnlContextPersistence.cpp
+
+libpnl_la-pnlContextSave.lo: pnlContextSave.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlContextSave.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlContextSave.Tpo -c -o libpnl_la-pnlContextSave.lo `test -f 'pnlContextSave.cpp' || echo '$(srcdir)/'`pnlContextSave.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlContextSave.Tpo $(DEPDIR)/libpnl_la-pnlContextSave.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlContextSave.cpp' object='libpnl_la-pnlContextSave.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlContextSave.lo `test -f 'pnlContextSave.cpp' || echo '$(srcdir)/'`pnlContextSave.cpp
+
+libpnl_la-pnlCoverage.lo: pnlCoverage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlCoverage.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlCoverage.Tpo -c -o libpnl_la-pnlCoverage.lo `test -f 'pnlCoverage.cpp' || echo '$(srcdir)/'`pnlCoverage.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlCoverage.Tpo $(DEPDIR)/libpnl_la-pnlCoverage.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlCoverage.cpp' object='libpnl_la-pnlCoverage.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlCoverage.lo `test -f 'pnlCoverage.cpp' || echo '$(srcdir)/'`pnlCoverage.cpp
+
+libpnl_la-pnlCPD.lo: pnlCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlCPD.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlCPD.Tpo -c -o libpnl_la-pnlCPD.lo `test -f 'pnlCPD.cpp' || echo '$(srcdir)/'`pnlCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlCPD.Tpo $(DEPDIR)/libpnl_la-pnlCPD.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlCPD.cpp' object='libpnl_la-pnlCPD.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlCPD.lo `test -f 'pnlCPD.cpp' || echo '$(srcdir)/'`pnlCPD.cpp
+
+libpnl_la-pnlDAG.lo: pnlDAG.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlDAG.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlDAG.Tpo -c -o libpnl_la-pnlDAG.lo `test -f 'pnlDAG.cpp' || echo '$(srcdir)/'`pnlDAG.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlDAG.Tpo $(DEPDIR)/libpnl_la-pnlDAG.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlDAG.cpp' object='libpnl_la-pnlDAG.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlDAG.lo `test -f 'pnlDAG.cpp' || echo '$(srcdir)/'`pnlDAG.cpp
+
+libpnl_la-pnlDBN.lo: pnlDBN.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlDBN.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlDBN.Tpo -c -o libpnl_la-pnlDBN.lo `test -f 'pnlDBN.cpp' || echo '$(srcdir)/'`pnlDBN.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlDBN.Tpo $(DEPDIR)/libpnl_la-pnlDBN.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlDBN.cpp' object='libpnl_la-pnlDBN.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlDBN.lo `test -f 'pnlDBN.cpp' || echo '$(srcdir)/'`pnlDBN.cpp
+
+libpnl_la-pnlDenseMatrix.lo: pnlDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlDenseMatrix.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlDenseMatrix.Tpo -c -o libpnl_la-pnlDenseMatrix.lo `test -f 'pnlDenseMatrix.cpp' || echo '$(srcdir)/'`pnlDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlDenseMatrix.Tpo $(DEPDIR)/libpnl_la-pnlDenseMatrix.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlDenseMatrix.cpp' object='libpnl_la-pnlDenseMatrix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlDenseMatrix.lo `test -f 'pnlDenseMatrix.cpp' || echo '$(srcdir)/'`pnlDenseMatrix.cpp
+
+libpnl_la-pnlDiagnostics.lo: pnlDiagnostics.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlDiagnostics.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlDiagnostics.Tpo -c -o libpnl_la-pnlDiagnostics.lo `test -f 'pnlDiagnostics.cpp' || echo '$(srcdir)/'`pnlDiagnostics.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlDiagnostics.Tpo $(DEPDIR)/libpnl_la-pnlDiagnostics.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlDiagnostics.cpp' object='libpnl_la-pnlDiagnostics.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlDiagnostics.lo `test -f 'pnlDiagnostics.cpp' || echo '$(srcdir)/'`pnlDiagnostics.cpp
+
+libpnl_la-pnlDistribFun.lo: pnlDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlDistribFun.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlDistribFun.Tpo -c -o libpnl_la-pnlDistribFun.lo `test -f 'pnlDistribFun.cpp' || echo '$(srcdir)/'`pnlDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlDistribFun.Tpo $(DEPDIR)/libpnl_la-pnlDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlDistribFun.cpp' object='libpnl_la-pnlDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlDistribFun.lo `test -f 'pnlDistribFun.cpp' || echo '$(srcdir)/'`pnlDistribFun.cpp
+
+libpnl_la-pnlDynamicGraphicalModel.lo: pnlDynamicGraphicalModel.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlDynamicGraphicalModel.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlDynamicGraphicalModel.Tpo -c -o libpnl_la-pnlDynamicGraphicalModel.lo `test -f 'pnlDynamicGraphicalModel.cpp' || echo '$(srcdir)/'`pnlDynamicGraphicalModel.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlDynamicGraphicalModel.Tpo $(DEPDIR)/libpnl_la-pnlDynamicGraphicalModel.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlDynamicGraphicalModel.cpp' object='libpnl_la-pnlDynamicGraphicalModel.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlDynamicGraphicalModel.lo `test -f 'pnlDynamicGraphicalModel.cpp' || echo '$(srcdir)/'`pnlDynamicGraphicalModel.cpp
+
+libpnl_la-pnlDynamicInferenceEngine.lo: pnlDynamicInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlDynamicInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlDynamicInferenceEngine.Tpo -c -o libpnl_la-pnlDynamicInferenceEngine.lo `test -f 'pnlDynamicInferenceEngine.cpp' || echo '$(srcdir)/'`pnlDynamicInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlDynamicInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlDynamicInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlDynamicInferenceEngine.cpp' object='libpnl_la-pnlDynamicInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlDynamicInferenceEngine.lo `test -f 'pnlDynamicInferenceEngine.cpp' || echo '$(srcdir)/'`pnlDynamicInferenceEngine.cpp
+
+libpnl_la-pnlDynamicLearningEngine.lo: pnlDynamicLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlDynamicLearningEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlDynamicLearningEngine.Tpo -c -o libpnl_la-pnlDynamicLearningEngine.lo `test -f 'pnlDynamicLearningEngine.cpp' || echo '$(srcdir)/'`pnlDynamicLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlDynamicLearningEngine.Tpo $(DEPDIR)/libpnl_la-pnlDynamicLearningEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlDynamicLearningEngine.cpp' object='libpnl_la-pnlDynamicLearningEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlDynamicLearningEngine.lo `test -f 'pnlDynamicLearningEngine.cpp' || echo '$(srcdir)/'`pnlDynamicLearningEngine.cpp
+
+libpnl_la-pnlEmLearningEngine.lo: pnlEmLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlEmLearningEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlEmLearningEngine.Tpo -c -o libpnl_la-pnlEmLearningEngine.lo `test -f 'pnlEmLearningEngine.cpp' || echo '$(srcdir)/'`pnlEmLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlEmLearningEngine.Tpo $(DEPDIR)/libpnl_la-pnlEmLearningEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlEmLearningEngine.cpp' object='libpnl_la-pnlEmLearningEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlEmLearningEngine.lo `test -f 'pnlEmLearningEngine.cpp' || echo '$(srcdir)/'`pnlEmLearningEngine.cpp
+
+libpnl_la-pnlEmLearningEngineDBN.lo: pnlEmLearningEngineDBN.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlEmLearningEngineDBN.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlEmLearningEngineDBN.Tpo -c -o libpnl_la-pnlEmLearningEngineDBN.lo `test -f 'pnlEmLearningEngineDBN.cpp' || echo '$(srcdir)/'`pnlEmLearningEngineDBN.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlEmLearningEngineDBN.Tpo $(DEPDIR)/libpnl_la-pnlEmLearningEngineDBN.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlEmLearningEngineDBN.cpp' object='libpnl_la-pnlEmLearningEngineDBN.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlEmLearningEngineDBN.lo `test -f 'pnlEmLearningEngineDBN.cpp' || echo '$(srcdir)/'`pnlEmLearningEngineDBN.cpp
+
+libpnl_la-pnlEvidence.lo: pnlEvidence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlEvidence.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlEvidence.Tpo -c -o libpnl_la-pnlEvidence.lo `test -f 'pnlEvidence.cpp' || echo '$(srcdir)/'`pnlEvidence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlEvidence.Tpo $(DEPDIR)/libpnl_la-pnlEvidence.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlEvidence.cpp' object='libpnl_la-pnlEvidence.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlEvidence.lo `test -f 'pnlEvidence.cpp' || echo '$(srcdir)/'`pnlEvidence.cpp
+
+libpnl_la-pnlExampleModels.lo: pnlExampleModels.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlExampleModels.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlExampleModels.Tpo -c -o libpnl_la-pnlExampleModels.lo `test -f 'pnlExampleModels.cpp' || echo '$(srcdir)/'`pnlExampleModels.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlExampleModels.Tpo $(DEPDIR)/libpnl_la-pnlExampleModels.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlExampleModels.cpp' object='libpnl_la-pnlExampleModels.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlExampleModels.lo `test -f 'pnlExampleModels.cpp' || echo '$(srcdir)/'`pnlExampleModels.cpp
+
+libpnl_la-pnlException.lo: pnlException.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlException.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlException.Tpo -c -o libpnl_la-pnlException.lo `test -f 'pnlException.cpp' || echo '$(srcdir)/'`pnlException.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlException.Tpo $(DEPDIR)/libpnl_la-pnlException.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlException.cpp' object='libpnl_la-pnlException.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlException.lo `test -f 'pnlException.cpp' || echo '$(srcdir)/'`pnlException.cpp
+
+libpnl_la-pnlExInferenceEngine.lo: pnlExInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlExInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlExInferenceEngine.Tpo -c -o libpnl_la-pnlExInferenceEngine.lo `test -f 'pnlExInferenceEngine.cpp' || echo '$(srcdir)/'`pnlExInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlExInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlExInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlExInferenceEngine.cpp' object='libpnl_la-pnlExInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlExInferenceEngine.lo `test -f 'pnlExInferenceEngine.cpp' || echo '$(srcdir)/'`pnlExInferenceEngine.cpp
+
+libpnl_la-pnlFactor.lo: pnlFactor.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlFactor.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlFactor.Tpo -c -o libpnl_la-pnlFactor.lo `test -f 'pnlFactor.cpp' || echo '$(srcdir)/'`pnlFactor.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlFactor.Tpo $(DEPDIR)/libpnl_la-pnlFactor.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlFactor.cpp' object='libpnl_la-pnlFactor.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlFactor.lo `test -f 'pnlFactor.cpp' || echo '$(srcdir)/'`pnlFactor.cpp
+
+libpnl_la-pnlFactorGraph.lo: pnlFactorGraph.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlFactorGraph.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlFactorGraph.Tpo -c -o libpnl_la-pnlFactorGraph.lo `test -f 'pnlFactorGraph.cpp' || echo '$(srcdir)/'`pnlFactorGraph.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlFactorGraph.Tpo $(DEPDIR)/libpnl_la-pnlFactorGraph.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlFactorGraph.cpp' object='libpnl_la-pnlFactorGraph.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlFactorGraph.lo `test -f 'pnlFactorGraph.cpp' || echo '$(srcdir)/'`pnlFactorGraph.cpp
+
+libpnl_la-pnlFactors.lo: pnlFactors.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlFactors.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlFactors.Tpo -c -o libpnl_la-pnlFactors.lo `test -f 'pnlFactors.cpp' || echo '$(srcdir)/'`pnlFactors.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlFactors.Tpo $(DEPDIR)/libpnl_la-pnlFactors.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlFactors.cpp' object='libpnl_la-pnlFactors.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlFactors.lo `test -f 'pnlFactors.cpp' || echo '$(srcdir)/'`pnlFactors.cpp
+
+libpnl_la-pnlFakePtr.lo: pnlFakePtr.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlFakePtr.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlFakePtr.Tpo -c -o libpnl_la-pnlFakePtr.lo `test -f 'pnlFakePtr.cpp' || echo '$(srcdir)/'`pnlFakePtr.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlFakePtr.Tpo $(DEPDIR)/libpnl_la-pnlFakePtr.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlFakePtr.cpp' object='libpnl_la-pnlFakePtr.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlFakePtr.lo `test -f 'pnlFakePtr.cpp' || echo '$(srcdir)/'`pnlFakePtr.cpp
+
+libpnl_la-pnlFGSumMaxInferenceEngine.lo: pnlFGSumMaxInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlFGSumMaxInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlFGSumMaxInferenceEngine.Tpo -c -o libpnl_la-pnlFGSumMaxInferenceEngine.lo `test -f 'pnlFGSumMaxInferenceEngine.cpp' || echo '$(srcdir)/'`pnlFGSumMaxInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlFGSumMaxInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlFGSumMaxInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlFGSumMaxInferenceEngine.cpp' object='libpnl_la-pnlFGSumMaxInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlFGSumMaxInferenceEngine.lo `test -f 'pnlFGSumMaxInferenceEngine.cpp' || echo '$(srcdir)/'`pnlFGSumMaxInferenceEngine.cpp
+
+libpnl_la-pnlGaussianCPD.lo: pnlGaussianCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlGaussianCPD.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlGaussianCPD.Tpo -c -o libpnl_la-pnlGaussianCPD.lo `test -f 'pnlGaussianCPD.cpp' || echo '$(srcdir)/'`pnlGaussianCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlGaussianCPD.Tpo $(DEPDIR)/libpnl_la-pnlGaussianCPD.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlGaussianCPD.cpp' object='libpnl_la-pnlGaussianCPD.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlGaussianCPD.lo `test -f 'pnlGaussianCPD.cpp' || echo '$(srcdir)/'`pnlGaussianCPD.cpp
+
+libpnl_la-pnlGaussianDistribFun.lo: pnlGaussianDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlGaussianDistribFun.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlGaussianDistribFun.Tpo -c -o libpnl_la-pnlGaussianDistribFun.lo `test -f 'pnlGaussianDistribFun.cpp' || echo '$(srcdir)/'`pnlGaussianDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlGaussianDistribFun.Tpo $(DEPDIR)/libpnl_la-pnlGaussianDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlGaussianDistribFun.cpp' object='libpnl_la-pnlGaussianDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlGaussianDistribFun.lo `test -f 'pnlGaussianDistribFun.cpp' || echo '$(srcdir)/'`pnlGaussianDistribFun.cpp
+
+libpnl_la-pnlGaussianPotential.lo: pnlGaussianPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlGaussianPotential.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlGaussianPotential.Tpo -c -o libpnl_la-pnlGaussianPotential.lo `test -f 'pnlGaussianPotential.cpp' || echo '$(srcdir)/'`pnlGaussianPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlGaussianPotential.Tpo $(DEPDIR)/libpnl_la-pnlGaussianPotential.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlGaussianPotential.cpp' object='libpnl_la-pnlGaussianPotential.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlGaussianPotential.lo `test -f 'pnlGaussianPotential.cpp' || echo '$(srcdir)/'`pnlGaussianPotential.cpp
+
+libpnl_la-pnlGibbsSamplingInferenceEngine.lo: pnlGibbsSamplingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlGibbsSamplingInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlGibbsSamplingInferenceEngine.Tpo -c -o libpnl_la-pnlGibbsSamplingInferenceEngine.lo `test -f 'pnlGibbsSamplingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlGibbsSamplingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlGibbsSamplingInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlGibbsSamplingInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlGibbsSamplingInferenceEngine.cpp' object='libpnl_la-pnlGibbsSamplingInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlGibbsSamplingInferenceEngine.lo `test -f 'pnlGibbsSamplingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlGibbsSamplingInferenceEngine.cpp
+
+libpnl_la-pnlGibbsWithAnnealingInferenceEngine.lo: pnlGibbsWithAnnealingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlGibbsWithAnnealingInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlGibbsWithAnnealingInferenceEngine.Tpo -c -o libpnl_la-pnlGibbsWithAnnealingInferenceEngine.lo `test -f 'pnlGibbsWithAnnealingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlGibbsWithAnnealingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlGibbsWithAnnealingInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlGibbsWithAnnealingInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlGibbsWithAnnealingInferenceEngine.cpp' object='libpnl_la-pnlGibbsWithAnnealingInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlGibbsWithAnnealingInferenceEngine.lo `test -f 'pnlGibbsWithAnnealingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlGibbsWithAnnealingInferenceEngine.cpp
+
+libpnl_la-pnlGraph.lo: pnlGraph.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlGraph.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlGraph.Tpo -c -o libpnl_la-pnlGraph.lo `test -f 'pnlGraph.cpp' || echo '$(srcdir)/'`pnlGraph.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlGraph.Tpo $(DEPDIR)/libpnl_la-pnlGraph.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlGraph.cpp' object='libpnl_la-pnlGraph.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlGraph.lo `test -f 'pnlGraph.cpp' || echo '$(srcdir)/'`pnlGraph.cpp
+
+libpnl_la-pnlGraphicalModel.lo: pnlGraphicalModel.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlGraphicalModel.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlGraphicalModel.Tpo -c -o libpnl_la-pnlGraphicalModel.lo `test -f 'pnlGraphicalModel.cpp' || echo '$(srcdir)/'`pnlGraphicalModel.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlGraphicalModel.Tpo $(DEPDIR)/libpnl_la-pnlGraphicalModel.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlGraphicalModel.cpp' object='libpnl_la-pnlGraphicalModel.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlGraphicalModel.lo `test -f 'pnlGraphicalModel.cpp' || echo '$(srcdir)/'`pnlGraphicalModel.cpp
+
+libpnl_la-pnlGroup.lo: pnlGroup.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlGroup.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlGroup.Tpo -c -o libpnl_la-pnlGroup.lo `test -f 'pnlGroup.cpp' || echo '$(srcdir)/'`pnlGroup.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlGroup.Tpo $(DEPDIR)/libpnl_la-pnlGroup.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlGroup.cpp' object='libpnl_la-pnlGroup.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlGroup.lo `test -f 'pnlGroup.cpp' || echo '$(srcdir)/'`pnlGroup.cpp
+
+libpnl_la-pnli2DNumericDenseMatrix.lo: pnli2DNumericDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnli2DNumericDenseMatrix.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnli2DNumericDenseMatrix.Tpo -c -o libpnl_la-pnli2DNumericDenseMatrix.lo `test -f 'pnli2DNumericDenseMatrix.cpp' || echo '$(srcdir)/'`pnli2DNumericDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnli2DNumericDenseMatrix.Tpo $(DEPDIR)/libpnl_la-pnli2DNumericDenseMatrix.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnli2DNumericDenseMatrix.cpp' object='libpnl_la-pnli2DNumericDenseMatrix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnli2DNumericDenseMatrix.lo `test -f 'pnli2DNumericDenseMatrix.cpp' || echo '$(srcdir)/'`pnli2DNumericDenseMatrix.cpp
+
+libpnl_la-pnlIDNet.lo: pnlIDNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlIDNet.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlIDNet.Tpo -c -o libpnl_la-pnlIDNet.lo `test -f 'pnlIDNet.cpp' || echo '$(srcdir)/'`pnlIDNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlIDNet.Tpo $(DEPDIR)/libpnl_la-pnlIDNet.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlIDNet.cpp' object='libpnl_la-pnlIDNet.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlIDNet.lo `test -f 'pnlIDNet.cpp' || echo '$(srcdir)/'`pnlIDNet.cpp
+
+libpnl_la-pnlIDPotential.lo: pnlIDPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlIDPotential.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlIDPotential.Tpo -c -o libpnl_la-pnlIDPotential.lo `test -f 'pnlIDPotential.cpp' || echo '$(srcdir)/'`pnlIDPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlIDPotential.Tpo $(DEPDIR)/libpnl_la-pnlIDPotential.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlIDPotential.cpp' object='libpnl_la-pnlIDPotential.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlIDPotential.lo `test -f 'pnlIDPotential.cpp' || echo '$(srcdir)/'`pnlIDPotential.cpp
+
+libpnl_la-pnlIDTabularPotential.lo: pnlIDTabularPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlIDTabularPotential.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlIDTabularPotential.Tpo -c -o libpnl_la-pnlIDTabularPotential.lo `test -f 'pnlIDTabularPotential.cpp' || echo '$(srcdir)/'`pnlIDTabularPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlIDTabularPotential.Tpo $(DEPDIR)/libpnl_la-pnlIDTabularPotential.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlIDTabularPotential.cpp' object='libpnl_la-pnlIDTabularPotential.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlIDTabularPotential.lo `test -f 'pnlIDTabularPotential.cpp' || echo '$(srcdir)/'`pnlIDTabularPotential.cpp
+
+libpnl_la-pnlInferenceEngine.lo: pnlInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlInferenceEngine.Tpo -c -o libpnl_la-pnlInferenceEngine.lo `test -f 'pnlInferenceEngine.cpp' || echo '$(srcdir)/'`pnlInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlInferenceEngine.cpp' object='libpnl_la-pnlInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlInferenceEngine.lo `test -f 'pnlInferenceEngine.cpp' || echo '$(srcdir)/'`pnlInferenceEngine.cpp
+
+libpnl_la-pnliNumericDenseMatrix.lo: pnliNumericDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnliNumericDenseMatrix.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnliNumericDenseMatrix.Tpo -c -o libpnl_la-pnliNumericDenseMatrix.lo `test -f 'pnliNumericDenseMatrix.cpp' || echo '$(srcdir)/'`pnliNumericDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnliNumericDenseMatrix.Tpo $(DEPDIR)/libpnl_la-pnliNumericDenseMatrix.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnliNumericDenseMatrix.cpp' object='libpnl_la-pnliNumericDenseMatrix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnliNumericDenseMatrix.lo `test -f 'pnliNumericDenseMatrix.cpp' || echo '$(srcdir)/'`pnliNumericDenseMatrix.cpp
+
+libpnl_la-pnliNumericSparseMatrix.lo: pnliNumericSparseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnliNumericSparseMatrix.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnliNumericSparseMatrix.Tpo -c -o libpnl_la-pnliNumericSparseMatrix.lo `test -f 'pnliNumericSparseMatrix.cpp' || echo '$(srcdir)/'`pnliNumericSparseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnliNumericSparseMatrix.Tpo $(DEPDIR)/libpnl_la-pnliNumericSparseMatrix.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnliNumericSparseMatrix.cpp' object='libpnl_la-pnliNumericSparseMatrix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnliNumericSparseMatrix.lo `test -f 'pnliNumericSparseMatrix.cpp' || echo '$(srcdir)/'`pnliNumericSparseMatrix.cpp
+
+libpnl_la-pnlJtreeInferenceEngine.lo: pnlJtreeInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlJtreeInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlJtreeInferenceEngine.Tpo -c -o libpnl_la-pnlJtreeInferenceEngine.lo `test -f 'pnlJtreeInferenceEngine.cpp' || echo '$(srcdir)/'`pnlJtreeInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlJtreeInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlJtreeInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlJtreeInferenceEngine.cpp' object='libpnl_la-pnlJtreeInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlJtreeInferenceEngine.lo `test -f 'pnlJtreeInferenceEngine.cpp' || echo '$(srcdir)/'`pnlJtreeInferenceEngine.cpp
+
+libpnl_la-pnlJunctionTree.lo: pnlJunctionTree.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlJunctionTree.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlJunctionTree.Tpo -c -o libpnl_la-pnlJunctionTree.lo `test -f 'pnlJunctionTree.cpp' || echo '$(srcdir)/'`pnlJunctionTree.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlJunctionTree.Tpo $(DEPDIR)/libpnl_la-pnlJunctionTree.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlJunctionTree.cpp' object='libpnl_la-pnlJunctionTree.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlJunctionTree.lo `test -f 'pnlJunctionTree.cpp' || echo '$(srcdir)/'`pnlJunctionTree.cpp
+
+libpnl_la-pnlLearningEngine.lo: pnlLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlLearningEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlLearningEngine.Tpo -c -o libpnl_la-pnlLearningEngine.lo `test -f 'pnlLearningEngine.cpp' || echo '$(srcdir)/'`pnlLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlLearningEngine.Tpo $(DEPDIR)/libpnl_la-pnlLearningEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlLearningEngine.cpp' object='libpnl_la-pnlLearningEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlLearningEngine.lo `test -f 'pnlLearningEngine.cpp' || echo '$(srcdir)/'`pnlLearningEngine.cpp
+
+libpnl_la-pnlLIMIDInfEngine.lo: pnlLIMIDInfEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlLIMIDInfEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlLIMIDInfEngine.Tpo -c -o libpnl_la-pnlLIMIDInfEngine.lo `test -f 'pnlLIMIDInfEngine.cpp' || echo '$(srcdir)/'`pnlLIMIDInfEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlLIMIDInfEngine.Tpo $(DEPDIR)/libpnl_la-pnlLIMIDInfEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlLIMIDInfEngine.cpp' object='libpnl_la-pnlLIMIDInfEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlLIMIDInfEngine.lo `test -f 'pnlLIMIDInfEngine.cpp' || echo '$(srcdir)/'`pnlLIMIDInfEngine.cpp
+
+libpnl_la-pnlLog.lo: pnlLog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlLog.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlLog.Tpo -c -o libpnl_la-pnlLog.lo `test -f 'pnlLog.cpp' || echo '$(srcdir)/'`pnlLog.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlLog.Tpo $(DEPDIR)/libpnl_la-pnlLog.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlLog.cpp' object='libpnl_la-pnlLog.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlLog.lo `test -f 'pnlLog.cpp' || echo '$(srcdir)/'`pnlLog.cpp
+
+libpnl_la-pnlLogDriver.lo: pnlLogDriver.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlLogDriver.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlLogDriver.Tpo -c -o libpnl_la-pnlLogDriver.lo `test -f 'pnlLogDriver.cpp' || echo '$(srcdir)/'`pnlLogDriver.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlLogDriver.Tpo $(DEPDIR)/libpnl_la-pnlLogDriver.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlLogDriver.cpp' object='libpnl_la-pnlLogDriver.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlLogDriver.lo `test -f 'pnlLogDriver.cpp' || echo '$(srcdir)/'`pnlLogDriver.cpp
+
+libpnl_la-pnlLogMultiplexor.lo: pnlLogMultiplexor.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlLogMultiplexor.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlLogMultiplexor.Tpo -c -o libpnl_la-pnlLogMultiplexor.lo `test -f 'pnlLogMultiplexor.cpp' || echo '$(srcdir)/'`pnlLogMultiplexor.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlLogMultiplexor.Tpo $(DEPDIR)/libpnl_la-pnlLogMultiplexor.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlLogMultiplexor.cpp' object='libpnl_la-pnlLogMultiplexor.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlLogMultiplexor.lo `test -f 'pnlLogMultiplexor.cpp' || echo '$(srcdir)/'`pnlLogMultiplexor.cpp
+
+libpnl_la-pnlLogUsing.lo: pnlLogUsing.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlLogUsing.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlLogUsing.Tpo -c -o libpnl_la-pnlLogUsing.lo `test -f 'pnlLogUsing.cpp' || echo '$(srcdir)/'`pnlLogUsing.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlLogUsing.Tpo $(DEPDIR)/libpnl_la-pnlLogUsing.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlLogUsing.cpp' object='libpnl_la-pnlLogUsing.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlLogUsing.lo `test -f 'pnlLogUsing.cpp' || echo '$(srcdir)/'`pnlLogUsing.cpp
+
+libpnl_la-pnlLWSamplingInferenceEngine.lo: pnlLWSamplingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlLWSamplingInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlLWSamplingInferenceEngine.Tpo -c -o libpnl_la-pnlLWSamplingInferenceEngine.lo `test -f 'pnlLWSamplingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlLWSamplingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlLWSamplingInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlLWSamplingInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlLWSamplingInferenceEngine.cpp' object='libpnl_la-pnlLWSamplingInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlLWSamplingInferenceEngine.lo `test -f 'pnlLWSamplingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlLWSamplingInferenceEngine.cpp
+
+libpnl_la-pnlMatrix.lo: pnlMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlMatrix.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlMatrix.Tpo -c -o libpnl_la-pnlMatrix.lo `test -f 'pnlMatrix.cpp' || echo '$(srcdir)/'`pnlMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlMatrix.Tpo $(DEPDIR)/libpnl_la-pnlMatrix.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlMatrix.cpp' object='libpnl_la-pnlMatrix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlMatrix.lo `test -f 'pnlMatrix.cpp' || echo '$(srcdir)/'`pnlMatrix.cpp
+
+libpnl_la-pnlMatrixIterator.lo: pnlMatrixIterator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlMatrixIterator.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlMatrixIterator.Tpo -c -o libpnl_la-pnlMatrixIterator.lo `test -f 'pnlMatrixIterator.cpp' || echo '$(srcdir)/'`pnlMatrixIterator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlMatrixIterator.Tpo $(DEPDIR)/libpnl_la-pnlMatrixIterator.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlMatrixIterator.cpp' object='libpnl_la-pnlMatrixIterator.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlMatrixIterator.lo `test -f 'pnlMatrixIterator.cpp' || echo '$(srcdir)/'`pnlMatrixIterator.cpp
+
+libpnl_la-pnlMixtureGaussianCPD.lo: pnlMixtureGaussianCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlMixtureGaussianCPD.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlMixtureGaussianCPD.Tpo -c -o libpnl_la-pnlMixtureGaussianCPD.lo `test -f 'pnlMixtureGaussianCPD.cpp' || echo '$(srcdir)/'`pnlMixtureGaussianCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlMixtureGaussianCPD.Tpo $(DEPDIR)/libpnl_la-pnlMixtureGaussianCPD.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlMixtureGaussianCPD.cpp' object='libpnl_la-pnlMixtureGaussianCPD.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlMixtureGaussianCPD.lo `test -f 'pnlMixtureGaussianCPD.cpp' || echo '$(srcdir)/'`pnlMixtureGaussianCPD.cpp
+
+libpnl_la-pnlMlDynamicStructLearn.lo: pnlMlDynamicStructLearn.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlMlDynamicStructLearn.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlMlDynamicStructLearn.Tpo -c -o libpnl_la-pnlMlDynamicStructLearn.lo `test -f 'pnlMlDynamicStructLearn.cpp' || echo '$(srcdir)/'`pnlMlDynamicStructLearn.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlMlDynamicStructLearn.Tpo $(DEPDIR)/libpnl_la-pnlMlDynamicStructLearn.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlMlDynamicStructLearn.cpp' object='libpnl_la-pnlMlDynamicStructLearn.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlMlDynamicStructLearn.lo `test -f 'pnlMlDynamicStructLearn.cpp' || echo '$(srcdir)/'`pnlMlDynamicStructLearn.cpp
+
+libpnl_la-pnlMlStaticStructLearn.lo: pnlMlStaticStructLearn.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlMlStaticStructLearn.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlMlStaticStructLearn.Tpo -c -o libpnl_la-pnlMlStaticStructLearn.lo `test -f 'pnlMlStaticStructLearn.cpp' || echo '$(srcdir)/'`pnlMlStaticStructLearn.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlMlStaticStructLearn.Tpo $(DEPDIR)/libpnl_la-pnlMlStaticStructLearn.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlMlStaticStructLearn.cpp' object='libpnl_la-pnlMlStaticStructLearn.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlMlStaticStructLearn.lo `test -f 'pnlMlStaticStructLearn.cpp' || echo '$(srcdir)/'`pnlMlStaticStructLearn.cpp
+
+libpnl_la-pnlMlStaticStructLearnHC.lo: pnlMlStaticStructLearnHC.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlMlStaticStructLearnHC.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlMlStaticStructLearnHC.Tpo -c -o libpnl_la-pnlMlStaticStructLearnHC.lo `test -f 'pnlMlStaticStructLearnHC.cpp' || echo '$(srcdir)/'`pnlMlStaticStructLearnHC.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlMlStaticStructLearnHC.Tpo $(DEPDIR)/libpnl_la-pnlMlStaticStructLearnHC.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlMlStaticStructLearnHC.cpp' object='libpnl_la-pnlMlStaticStructLearnHC.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlMlStaticStructLearnHC.lo `test -f 'pnlMlStaticStructLearnHC.cpp' || echo '$(srcdir)/'`pnlMlStaticStructLearnHC.cpp
+
+libpnl_la-pnlMNet.lo: pnlMNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlMNet.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlMNet.Tpo -c -o libpnl_la-pnlMNet.lo `test -f 'pnlMNet.cpp' || echo '$(srcdir)/'`pnlMNet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlMNet.Tpo $(DEPDIR)/libpnl_la-pnlMNet.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlMNet.cpp' object='libpnl_la-pnlMNet.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlMNet.lo `test -f 'pnlMNet.cpp' || echo '$(srcdir)/'`pnlMNet.cpp
+
+libpnl_la-pnlModelDomain.lo: pnlModelDomain.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlModelDomain.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlModelDomain.Tpo -c -o libpnl_la-pnlModelDomain.lo `test -f 'pnlModelDomain.cpp' || echo '$(srcdir)/'`pnlModelDomain.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlModelDomain.Tpo $(DEPDIR)/libpnl_la-pnlModelDomain.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlModelDomain.cpp' object='libpnl_la-pnlModelDomain.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlModelDomain.lo `test -f 'pnlModelDomain.cpp' || echo '$(srcdir)/'`pnlModelDomain.cpp
+
+libpnl_la-pnlMRF2.lo: pnlMRF2.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlMRF2.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlMRF2.Tpo -c -o libpnl_la-pnlMRF2.lo `test -f 'pnlMRF2.cpp' || echo '$(srcdir)/'`pnlMRF2.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlMRF2.Tpo $(DEPDIR)/libpnl_la-pnlMRF2.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlMRF2.cpp' object='libpnl_la-pnlMRF2.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlMRF2.lo `test -f 'pnlMRF2.cpp' || echo '$(srcdir)/'`pnlMRF2.cpp
+
+libpnl_la-pnlNaiveInferenceEngine.lo: pnlNaiveInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlNaiveInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlNaiveInferenceEngine.Tpo -c -o libpnl_la-pnlNaiveInferenceEngine.lo `test -f 'pnlNaiveInferenceEngine.cpp' || echo '$(srcdir)/'`pnlNaiveInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlNaiveInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlNaiveInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlNaiveInferenceEngine.cpp' object='libpnl_la-pnlNaiveInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlNaiveInferenceEngine.lo `test -f 'pnlNaiveInferenceEngine.cpp' || echo '$(srcdir)/'`pnlNaiveInferenceEngine.cpp
+
+libpnl_la-pnlNodeType.lo: pnlNodeType.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlNodeType.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlNodeType.Tpo -c -o libpnl_la-pnlNodeType.lo `test -f 'pnlNodeType.cpp' || echo '$(srcdir)/'`pnlNodeType.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlNodeType.Tpo $(DEPDIR)/libpnl_la-pnlNodeType.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlNodeType.cpp' object='libpnl_la-pnlNodeType.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlNodeType.lo `test -f 'pnlNodeType.cpp' || echo '$(srcdir)/'`pnlNodeType.cpp
+
+libpnl_la-pnlNodeValues.lo: pnlNodeValues.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlNodeValues.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlNodeValues.Tpo -c -o libpnl_la-pnlNodeValues.lo `test -f 'pnlNodeValues.cpp' || echo '$(srcdir)/'`pnlNodeValues.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlNodeValues.Tpo $(DEPDIR)/libpnl_la-pnlNodeValues.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlNodeValues.cpp' object='libpnl_la-pnlNodeValues.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlNodeValues.lo `test -f 'pnlNodeValues.cpp' || echo '$(srcdir)/'`pnlNodeValues.cpp
+
+libpnl_la-pnlNumericDenseMatrix.lo: pnlNumericDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlNumericDenseMatrix.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlNumericDenseMatrix.Tpo -c -o libpnl_la-pnlNumericDenseMatrix.lo `test -f 'pnlNumericDenseMatrix.cpp' || echo '$(srcdir)/'`pnlNumericDenseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlNumericDenseMatrix.Tpo $(DEPDIR)/libpnl_la-pnlNumericDenseMatrix.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlNumericDenseMatrix.cpp' object='libpnl_la-pnlNumericDenseMatrix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlNumericDenseMatrix.lo `test -f 'pnlNumericDenseMatrix.cpp' || echo '$(srcdir)/'`pnlNumericDenseMatrix.cpp
+
+libpnl_la-pnlObject.lo: pnlObject.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlObject.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlObject.Tpo -c -o libpnl_la-pnlObject.lo `test -f 'pnlObject.cpp' || echo '$(srcdir)/'`pnlObject.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlObject.Tpo $(DEPDIR)/libpnl_la-pnlObject.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlObject.cpp' object='libpnl_la-pnlObject.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlObject.lo `test -f 'pnlObject.cpp' || echo '$(srcdir)/'`pnlObject.cpp
+
+libpnl_la-pnlObjHandler.lo: pnlObjHandler.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlObjHandler.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlObjHandler.Tpo -c -o libpnl_la-pnlObjHandler.lo `test -f 'pnlObjHandler.cpp' || echo '$(srcdir)/'`pnlObjHandler.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlObjHandler.Tpo $(DEPDIR)/libpnl_la-pnlObjHandler.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlObjHandler.cpp' object='libpnl_la-pnlObjHandler.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlObjHandler.lo `test -f 'pnlObjHandler.cpp' || echo '$(srcdir)/'`pnlObjHandler.cpp
+
+libpnl_la-pnlParConfig.lo: pnlParConfig.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlParConfig.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlParConfig.Tpo -c -o libpnl_la-pnlParConfig.lo `test -f 'pnlParConfig.cpp' || echo '$(srcdir)/'`pnlParConfig.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlParConfig.Tpo $(DEPDIR)/libpnl_la-pnlParConfig.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlParConfig.cpp' object='libpnl_la-pnlParConfig.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlParConfig.lo `test -f 'pnlParConfig.cpp' || echo '$(srcdir)/'`pnlParConfig.cpp
+
+libpnl_la-pnlParEmLearningEngine.lo: pnlParEmLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlParEmLearningEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlParEmLearningEngine.Tpo -c -o libpnl_la-pnlParEmLearningEngine.lo `test -f 'pnlParEmLearningEngine.cpp' || echo '$(srcdir)/'`pnlParEmLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlParEmLearningEngine.Tpo $(DEPDIR)/libpnl_la-pnlParEmLearningEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlParEmLearningEngine.cpp' object='libpnl_la-pnlParEmLearningEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlParEmLearningEngine.lo `test -f 'pnlParEmLearningEngine.cpp' || echo '$(srcdir)/'`pnlParEmLearningEngine.cpp
+
+libpnl_la-pnlParGibbsSamplingInferenceEngine.lo: pnlParGibbsSamplingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlParGibbsSamplingInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlParGibbsSamplingInferenceEngine.Tpo -c -o libpnl_la-pnlParGibbsSamplingInferenceEngine.lo `test -f 'pnlParGibbsSamplingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlParGibbsSamplingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlParGibbsSamplingInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlParGibbsSamplingInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlParGibbsSamplingInferenceEngine.cpp' object='libpnl_la-pnlParGibbsSamplingInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlParGibbsSamplingInferenceEngine.lo `test -f 'pnlParGibbsSamplingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlParGibbsSamplingInferenceEngine.cpp
+
+libpnl_la-pnlParJtreeInferenceEngine.lo: pnlParJtreeInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlParJtreeInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlParJtreeInferenceEngine.Tpo -c -o libpnl_la-pnlParJtreeInferenceEngine.lo `test -f 'pnlParJtreeInferenceEngine.cpp' || echo '$(srcdir)/'`pnlParJtreeInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlParJtreeInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlParJtreeInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlParJtreeInferenceEngine.cpp' object='libpnl_la-pnlParJtreeInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlParJtreeInferenceEngine.lo `test -f 'pnlParJtreeInferenceEngine.cpp' || echo '$(srcdir)/'`pnlParJtreeInferenceEngine.cpp
+
+libpnl_la-pnlParNewDelete.lo: pnlParNewDelete.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlParNewDelete.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlParNewDelete.Tpo -c -o libpnl_la-pnlParNewDelete.lo `test -f 'pnlParNewDelete.cpp' || echo '$(srcdir)/'`pnlParNewDelete.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlParNewDelete.Tpo $(DEPDIR)/libpnl_la-pnlParNewDelete.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlParNewDelete.cpp' object='libpnl_la-pnlParNewDelete.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlParNewDelete.lo `test -f 'pnlParNewDelete.cpp' || echo '$(srcdir)/'`pnlParNewDelete.cpp
+
+libpnl_la-pnlParPearlInferenceEngine.lo: pnlParPearlInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlParPearlInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlParPearlInferenceEngine.Tpo -c -o libpnl_la-pnlParPearlInferenceEngine.lo `test -f 'pnlParPearlInferenceEngine.cpp' || echo '$(srcdir)/'`pnlParPearlInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlParPearlInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlParPearlInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlParPearlInferenceEngine.cpp' object='libpnl_la-pnlParPearlInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlParPearlInferenceEngine.lo `test -f 'pnlParPearlInferenceEngine.cpp' || echo '$(srcdir)/'`pnlParPearlInferenceEngine.cpp
+
+libpnl_la-pnlPearlInferenceEngine.lo: pnlPearlInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPearlInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPearlInferenceEngine.Tpo -c -o libpnl_la-pnlPearlInferenceEngine.lo `test -f 'pnlPearlInferenceEngine.cpp' || echo '$(srcdir)/'`pnlPearlInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPearlInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlPearlInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPearlInferenceEngine.cpp' object='libpnl_la-pnlPearlInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPearlInferenceEngine.lo `test -f 'pnlPearlInferenceEngine.cpp' || echo '$(srcdir)/'`pnlPearlInferenceEngine.cpp
+
+libpnl_la-pnlPersistCover.lo: pnlPersistCover.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPersistCover.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPersistCover.Tpo -c -o libpnl_la-pnlPersistCover.lo `test -f 'pnlPersistCover.cpp' || echo '$(srcdir)/'`pnlPersistCover.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPersistCover.Tpo $(DEPDIR)/libpnl_la-pnlPersistCover.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPersistCover.cpp' object='libpnl_la-pnlPersistCover.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPersistCover.lo `test -f 'pnlPersistCover.cpp' || echo '$(srcdir)/'`pnlPersistCover.cpp
+
+libpnl_la-pnlPersistCPD.lo: pnlPersistCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPersistCPD.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPersistCPD.Tpo -c -o libpnl_la-pnlPersistCPD.lo `test -f 'pnlPersistCPD.cpp' || echo '$(srcdir)/'`pnlPersistCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPersistCPD.Tpo $(DEPDIR)/libpnl_la-pnlPersistCPD.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPersistCPD.cpp' object='libpnl_la-pnlPersistCPD.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPersistCPD.lo `test -f 'pnlPersistCPD.cpp' || echo '$(srcdir)/'`pnlPersistCPD.cpp
+
+libpnl_la-pnlPersistDistribFun.lo: pnlPersistDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPersistDistribFun.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPersistDistribFun.Tpo -c -o libpnl_la-pnlPersistDistribFun.lo `test -f 'pnlPersistDistribFun.cpp' || echo '$(srcdir)/'`pnlPersistDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPersistDistribFun.Tpo $(DEPDIR)/libpnl_la-pnlPersistDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPersistDistribFun.cpp' object='libpnl_la-pnlPersistDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPersistDistribFun.lo `test -f 'pnlPersistDistribFun.cpp' || echo '$(srcdir)/'`pnlPersistDistribFun.cpp
+
+libpnl_la-pnlPersistence.lo: pnlPersistence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPersistence.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPersistence.Tpo -c -o libpnl_la-pnlPersistence.lo `test -f 'pnlPersistence.cpp' || echo '$(srcdir)/'`pnlPersistence.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPersistence.Tpo $(DEPDIR)/libpnl_la-pnlPersistence.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPersistence.cpp' object='libpnl_la-pnlPersistence.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPersistence.lo `test -f 'pnlPersistence.cpp' || echo '$(srcdir)/'`pnlPersistence.cpp
+
+libpnl_la-pnlPersistGraph.lo: pnlPersistGraph.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPersistGraph.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPersistGraph.Tpo -c -o libpnl_la-pnlPersistGraph.lo `test -f 'pnlPersistGraph.cpp' || echo '$(srcdir)/'`pnlPersistGraph.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPersistGraph.Tpo $(DEPDIR)/libpnl_la-pnlPersistGraph.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPersistGraph.cpp' object='libpnl_la-pnlPersistGraph.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPersistGraph.lo `test -f 'pnlPersistGraph.cpp' || echo '$(srcdir)/'`pnlPersistGraph.cpp
+
+libpnl_la-pnlPersistModel.lo: pnlPersistModel.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPersistModel.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPersistModel.Tpo -c -o libpnl_la-pnlPersistModel.lo `test -f 'pnlPersistModel.cpp' || echo '$(srcdir)/'`pnlPersistModel.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPersistModel.Tpo $(DEPDIR)/libpnl_la-pnlPersistModel.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPersistModel.cpp' object='libpnl_la-pnlPersistModel.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPersistModel.lo `test -f 'pnlPersistModel.cpp' || echo '$(srcdir)/'`pnlPersistModel.cpp
+
+libpnl_la-pnlPersistModelDomain.lo: pnlPersistModelDomain.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPersistModelDomain.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPersistModelDomain.Tpo -c -o libpnl_la-pnlPersistModelDomain.lo `test -f 'pnlPersistModelDomain.cpp' || echo '$(srcdir)/'`pnlPersistModelDomain.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPersistModelDomain.Tpo $(DEPDIR)/libpnl_la-pnlPersistModelDomain.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPersistModelDomain.cpp' object='libpnl_la-pnlPersistModelDomain.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPersistModelDomain.lo `test -f 'pnlPersistModelDomain.cpp' || echo '$(srcdir)/'`pnlPersistModelDomain.cpp
+
+libpnl_la-pnlPersistTypes.lo: pnlPersistTypes.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPersistTypes.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPersistTypes.Tpo -c -o libpnl_la-pnlPersistTypes.lo `test -f 'pnlPersistTypes.cpp' || echo '$(srcdir)/'`pnlPersistTypes.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPersistTypes.Tpo $(DEPDIR)/libpnl_la-pnlPersistTypes.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPersistTypes.cpp' object='libpnl_la-pnlPersistTypes.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPersistTypes.lo `test -f 'pnlPersistTypes.cpp' || echo '$(srcdir)/'`pnlPersistTypes.cpp
+
+libpnl_la-pnlpnlType.lo: pnlpnlType.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlpnlType.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlpnlType.Tpo -c -o libpnl_la-pnlpnlType.lo `test -f 'pnlpnlType.cpp' || echo '$(srcdir)/'`pnlpnlType.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlpnlType.Tpo $(DEPDIR)/libpnl_la-pnlpnlType.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlpnlType.cpp' object='libpnl_la-pnlpnlType.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlpnlType.lo `test -f 'pnlpnlType.cpp' || echo '$(srcdir)/'`pnlpnlType.cpp
+
+libpnl_la-pnlPotential.lo: pnlPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlPotential.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlPotential.Tpo -c -o libpnl_la-pnlPotential.lo `test -f 'pnlPotential.cpp' || echo '$(srcdir)/'`pnlPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlPotential.Tpo $(DEPDIR)/libpnl_la-pnlPotential.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlPotential.cpp' object='libpnl_la-pnlPotential.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlPotential.lo `test -f 'pnlPotential.cpp' || echo '$(srcdir)/'`pnlPotential.cpp
+
+libpnl_la-pnlReferenceCounter.lo: pnlReferenceCounter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlReferenceCounter.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlReferenceCounter.Tpo -c -o libpnl_la-pnlReferenceCounter.lo `test -f 'pnlReferenceCounter.cpp' || echo '$(srcdir)/'`pnlReferenceCounter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlReferenceCounter.Tpo $(DEPDIR)/libpnl_la-pnlReferenceCounter.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlReferenceCounter.cpp' object='libpnl_la-pnlReferenceCounter.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlReferenceCounter.lo `test -f 'pnlReferenceCounter.cpp' || echo '$(srcdir)/'`pnlReferenceCounter.cpp
+
+libpnl_la-pnlRng.lo: pnlRng.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlRng.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlRng.Tpo -c -o libpnl_la-pnlRng.lo `test -f 'pnlRng.cpp' || echo '$(srcdir)/'`pnlRng.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlRng.Tpo $(DEPDIR)/libpnl_la-pnlRng.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlRng.cpp' object='libpnl_la-pnlRng.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlRng.lo `test -f 'pnlRng.cpp' || echo '$(srcdir)/'`pnlRng.cpp
+
+libpnl_la-pnlSamplingInferenceEngine.lo: pnlSamplingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlSamplingInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlSamplingInferenceEngine.Tpo -c -o libpnl_la-pnlSamplingInferenceEngine.lo `test -f 'pnlSamplingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlSamplingInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlSamplingInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlSamplingInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlSamplingInferenceEngine.cpp' object='libpnl_la-pnlSamplingInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlSamplingInferenceEngine.lo `test -f 'pnlSamplingInferenceEngine.cpp' || echo '$(srcdir)/'`pnlSamplingInferenceEngine.cpp
+
+libpnl_la-pnlScalarDistribFun.lo: pnlScalarDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlScalarDistribFun.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlScalarDistribFun.Tpo -c -o libpnl_la-pnlScalarDistribFun.lo `test -f 'pnlScalarDistribFun.cpp' || echo '$(srcdir)/'`pnlScalarDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlScalarDistribFun.Tpo $(DEPDIR)/libpnl_la-pnlScalarDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlScalarDistribFun.cpp' object='libpnl_la-pnlScalarDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlScalarDistribFun.lo `test -f 'pnlScalarDistribFun.cpp' || echo '$(srcdir)/'`pnlScalarDistribFun.cpp
+
+libpnl_la-pnlScalarPotential.lo: pnlScalarPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlScalarPotential.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlScalarPotential.Tpo -c -o libpnl_la-pnlScalarPotential.lo `test -f 'pnlScalarPotential.cpp' || echo '$(srcdir)/'`pnlScalarPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlScalarPotential.Tpo $(DEPDIR)/libpnl_la-pnlScalarPotential.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlScalarPotential.cpp' object='libpnl_la-pnlScalarPotential.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlScalarPotential.lo `test -f 'pnlScalarPotential.cpp' || echo '$(srcdir)/'`pnlScalarPotential.cpp
+
+libpnl_la-pnlSoftMaxCPD.lo: pnlSoftMaxCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlSoftMaxCPD.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlSoftMaxCPD.Tpo -c -o libpnl_la-pnlSoftMaxCPD.lo `test -f 'pnlSoftMaxCPD.cpp' || echo '$(srcdir)/'`pnlSoftMaxCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlSoftMaxCPD.Tpo $(DEPDIR)/libpnl_la-pnlSoftMaxCPD.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlSoftMaxCPD.cpp' object='libpnl_la-pnlSoftMaxCPD.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlSoftMaxCPD.lo `test -f 'pnlSoftMaxCPD.cpp' || echo '$(srcdir)/'`pnlSoftMaxCPD.cpp
+
+libpnl_la-pnlSoftMaxDistribFun.lo: pnlSoftMaxDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlSoftMaxDistribFun.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlSoftMaxDistribFun.Tpo -c -o libpnl_la-pnlSoftMaxDistribFun.lo `test -f 'pnlSoftMaxDistribFun.cpp' || echo '$(srcdir)/'`pnlSoftMaxDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlSoftMaxDistribFun.Tpo $(DEPDIR)/libpnl_la-pnlSoftMaxDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlSoftMaxDistribFun.cpp' object='libpnl_la-pnlSoftMaxDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlSoftMaxDistribFun.lo `test -f 'pnlSoftMaxDistribFun.cpp' || echo '$(srcdir)/'`pnlSoftMaxDistribFun.cpp
+
+libpnl_la-pnlSparseMatrix.lo: pnlSparseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlSparseMatrix.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlSparseMatrix.Tpo -c -o libpnl_la-pnlSparseMatrix.lo `test -f 'pnlSparseMatrix.cpp' || echo '$(srcdir)/'`pnlSparseMatrix.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlSparseMatrix.Tpo $(DEPDIR)/libpnl_la-pnlSparseMatrix.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlSparseMatrix.cpp' object='libpnl_la-pnlSparseMatrix.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlSparseMatrix.lo `test -f 'pnlSparseMatrix.cpp' || echo '$(srcdir)/'`pnlSparseMatrix.cpp
+
+libpnl_la-pnlSpecPearlInferenceEngine.lo: pnlSpecPearlInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlSpecPearlInferenceEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlSpecPearlInferenceEngine.Tpo -c -o libpnl_la-pnlSpecPearlInferenceEngine.lo `test -f 'pnlSpecPearlInferenceEngine.cpp' || echo '$(srcdir)/'`pnlSpecPearlInferenceEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlSpecPearlInferenceEngine.Tpo $(DEPDIR)/libpnl_la-pnlSpecPearlInferenceEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlSpecPearlInferenceEngine.cpp' object='libpnl_la-pnlSpecPearlInferenceEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlSpecPearlInferenceEngine.lo `test -f 'pnlSpecPearlInferenceEngine.cpp' || echo '$(srcdir)/'`pnlSpecPearlInferenceEngine.cpp
+
+libpnl_la-pnlStaticGraphicalModel.lo: pnlStaticGraphicalModel.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlStaticGraphicalModel.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlStaticGraphicalModel.Tpo -c -o libpnl_la-pnlStaticGraphicalModel.lo `test -f 'pnlStaticGraphicalModel.cpp' || echo '$(srcdir)/'`pnlStaticGraphicalModel.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlStaticGraphicalModel.Tpo $(DEPDIR)/libpnl_la-pnlStaticGraphicalModel.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlStaticGraphicalModel.cpp' object='libpnl_la-pnlStaticGraphicalModel.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlStaticGraphicalModel.lo `test -f 'pnlStaticGraphicalModel.cpp' || echo '$(srcdir)/'`pnlStaticGraphicalModel.cpp
+
+libpnl_la-pnlStaticLearningEngine.lo: pnlStaticLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlStaticLearningEngine.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlStaticLearningEngine.Tpo -c -o libpnl_la-pnlStaticLearningEngine.lo `test -f 'pnlStaticLearningEngine.cpp' || echo '$(srcdir)/'`pnlStaticLearningEngine.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlStaticLearningEngine.Tpo $(DEPDIR)/libpnl_la-pnlStaticLearningEngine.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlStaticLearningEngine.cpp' object='libpnl_la-pnlStaticLearningEngine.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlStaticLearningEngine.lo `test -f 'pnlStaticLearningEngine.cpp' || echo '$(srcdir)/'`pnlStaticLearningEngine.cpp
+
+libpnl_la-pnlStaticStructLearnSEM.lo: pnlStaticStructLearnSEM.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlStaticStructLearnSEM.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlStaticStructLearnSEM.Tpo -c -o libpnl_la-pnlStaticStructLearnSEM.lo `test -f 'pnlStaticStructLearnSEM.cpp' || echo '$(srcdir)/'`pnlStaticStructLearnSEM.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlStaticStructLearnSEM.Tpo $(DEPDIR)/libpnl_la-pnlStaticStructLearnSEM.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlStaticStructLearnSEM.cpp' object='libpnl_la-pnlStaticStructLearnSEM.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlStaticStructLearnSEM.lo `test -f 'pnlStaticStructLearnSEM.cpp' || echo '$(srcdir)/'`pnlStaticStructLearnSEM.cpp
+
+libpnl_la-pnlString.lo: pnlString.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlString.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlString.Tpo -c -o libpnl_la-pnlString.lo `test -f 'pnlString.cpp' || echo '$(srcdir)/'`pnlString.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlString.Tpo $(DEPDIR)/libpnl_la-pnlString.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlString.cpp' object='libpnl_la-pnlString.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlString.lo `test -f 'pnlString.cpp' || echo '$(srcdir)/'`pnlString.cpp
+
+libpnl_la-pnlTabularCPD.lo: pnlTabularCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlTabularCPD.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlTabularCPD.Tpo -c -o libpnl_la-pnlTabularCPD.lo `test -f 'pnlTabularCPD.cpp' || echo '$(srcdir)/'`pnlTabularCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlTabularCPD.Tpo $(DEPDIR)/libpnl_la-pnlTabularCPD.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlTabularCPD.cpp' object='libpnl_la-pnlTabularCPD.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlTabularCPD.lo `test -f 'pnlTabularCPD.cpp' || echo '$(srcdir)/'`pnlTabularCPD.cpp
+
+libpnl_la-pnlTabularDistribFun.lo: pnlTabularDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlTabularDistribFun.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlTabularDistribFun.Tpo -c -o libpnl_la-pnlTabularDistribFun.lo `test -f 'pnlTabularDistribFun.cpp' || echo '$(srcdir)/'`pnlTabularDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlTabularDistribFun.Tpo $(DEPDIR)/libpnl_la-pnlTabularDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlTabularDistribFun.cpp' object='libpnl_la-pnlTabularDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlTabularDistribFun.lo `test -f 'pnlTabularDistribFun.cpp' || echo '$(srcdir)/'`pnlTabularDistribFun.cpp
+
+libpnl_la-pnlTabularPotential.lo: pnlTabularPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlTabularPotential.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlTabularPotential.Tpo -c -o libpnl_la-pnlTabularPotential.lo `test -f 'pnlTabularPotential.cpp' || echo '$(srcdir)/'`pnlTabularPotential.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlTabularPotential.Tpo $(DEPDIR)/libpnl_la-pnlTabularPotential.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlTabularPotential.cpp' object='libpnl_la-pnlTabularPotential.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlTabularPotential.lo `test -f 'pnlTabularPotential.cpp' || echo '$(srcdir)/'`pnlTabularPotential.cpp
+
+libpnl_la-pnlTimer.lo: pnlTimer.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlTimer.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlTimer.Tpo -c -o libpnl_la-pnlTimer.lo `test -f 'pnlTimer.cpp' || echo '$(srcdir)/'`pnlTimer.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlTimer.Tpo $(DEPDIR)/libpnl_la-pnlTimer.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlTimer.cpp' object='libpnl_la-pnlTimer.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlTimer.lo `test -f 'pnlTimer.cpp' || echo '$(srcdir)/'`pnlTimer.cpp
+
+libpnl_la-pnlTreeCPD.lo: pnlTreeCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlTreeCPD.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlTreeCPD.Tpo -c -o libpnl_la-pnlTreeCPD.lo `test -f 'pnlTreeCPD.cpp' || echo '$(srcdir)/'`pnlTreeCPD.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlTreeCPD.Tpo $(DEPDIR)/libpnl_la-pnlTreeCPD.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlTreeCPD.cpp' object='libpnl_la-pnlTreeCPD.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlTreeCPD.lo `test -f 'pnlTreeCPD.cpp' || echo '$(srcdir)/'`pnlTreeCPD.cpp
+
+libpnl_la-pnlTreeDistribFun.lo: pnlTreeDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlTreeDistribFun.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlTreeDistribFun.Tpo -c -o libpnl_la-pnlTreeDistribFun.lo `test -f 'pnlTreeDistribFun.cpp' || echo '$(srcdir)/'`pnlTreeDistribFun.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlTreeDistribFun.Tpo $(DEPDIR)/libpnl_la-pnlTreeDistribFun.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlTreeDistribFun.cpp' object='libpnl_la-pnlTreeDistribFun.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlTreeDistribFun.lo `test -f 'pnlTreeDistribFun.cpp' || echo '$(srcdir)/'`pnlTreeDistribFun.cpp
+
+libpnl_la-pnlXMLRead.lo: pnlXMLRead.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlXMLRead.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlXMLRead.Tpo -c -o libpnl_la-pnlXMLRead.lo `test -f 'pnlXMLRead.cpp' || echo '$(srcdir)/'`pnlXMLRead.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlXMLRead.Tpo $(DEPDIR)/libpnl_la-pnlXMLRead.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlXMLRead.cpp' object='libpnl_la-pnlXMLRead.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlXMLRead.lo `test -f 'pnlXMLRead.cpp' || echo '$(srcdir)/'`pnlXMLRead.cpp
+
+libpnl_la-pnlXMLWrite.lo: pnlXMLWrite.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpnl_la-pnlXMLWrite.lo -MD -MP -MF $(DEPDIR)/libpnl_la-pnlXMLWrite.Tpo -c -o libpnl_la-pnlXMLWrite.lo `test -f 'pnlXMLWrite.cpp' || echo '$(srcdir)/'`pnlXMLWrite.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libpnl_la-pnlXMLWrite.Tpo $(DEPDIR)/libpnl_la-pnlXMLWrite.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pnlXMLWrite.cpp' object='libpnl_la-pnlXMLWrite.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpnl_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libpnl_la-pnlXMLWrite.lo `test -f 'pnlXMLWrite.cpp' || echo '$(srcdir)/'`pnlXMLWrite.cpp
 
 mostlyclean-libtool:
 	-rm -f *.lo
