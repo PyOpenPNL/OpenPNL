@@ -30,53 +30,53 @@ int main()
      //Create an inference engine
     C1_5SliceJtreeInfEngine* pInfEng;
     pInfEng = C1_5SliceJtreeInfEngine::Create(pArHMM);
-    
-    //Number of time slices for unrolling 
+
+    //Number of time slices for unrolling
     int nTimeSlices = 5;
     const CPotential* pQueryJPD;
-    
+
     //Crate evidence for every slice
     CEvidence** pEvidences;
     pEvidences = new CEvidence*[nTimeSlices];
-    
-    //Let node 1 is always observed 
+
+    //Let node 1 is always observed
     const int obsNodesNums[] = { 1 };
     valueVector obsNodesVals(1);
-    
-    int i;    
+
+    int i;
     for( i = 0; i < nTimeSlices; i++ )
     {
-        // Generate random value 
+        // Generate random value
 	obsNodesVals[0].SetInt(rand()%2);
         pEvidences[i] = CEvidence::Create( pArHMM, 1, obsNodesNums,
             obsNodesVals );
     }
-    
+
     // Create smoothing procedure
     pInfEng->DefineProcedure(ptSmoothing, nTimeSlices);
     // Enter created evidences
     pInfEng->EnterEvidence(pEvidences, nTimeSlices);
     // Start smoothing process
     pInfEng->Smoothing();
-    
+
     // Choose query set of nodes for every slice
     int queryPrior[] = { 0 };
     int queryPriorSize = 1;
     int query[] = { 0, 2 };
     int querySize = 2;
-    
+
     std::cout << " Results of smoothing " << std::endl;
-    
+
     int slice = 0;
     pInfEng->MarginalNodes( queryPrior, queryPriorSize, slice );
     pQueryJPD = pInfEng->GetQueryJPD();
-    
+
     ShowResultsForInference(pQueryJPD, slice);
     //pQueryJPD->Dump();
-   
-    
+
+
     std::cout << std::endl;
-    
+
     for( slice = 1; slice < nTimeSlices; slice++ )
     {
         pInfEng->MarginalNodes( query, querySize, slice );
@@ -84,9 +84,9 @@ int main()
         ShowResultsForInference(pQueryJPD, slice);
 	//pQueryJPD->Dump();
     }
-    
+
     slice = 0;
-    
+
     //Create filtering procedure
     pInfEng->DefineProcedure( ptFiltering );
     pInfEng->EnterEvidence( &(pEvidences[slice]), 1 );
@@ -97,7 +97,7 @@ int main()
     std::cout << " Results of filtering " << std::endl;
     ShowResultsForInference(pQueryJPD, slice);
     //pQueryJPD->Dump();
-    
+
 
     for( slice = 1; slice < nTimeSlices; slice++ )
     {
@@ -108,7 +108,7 @@ int main()
         ShowResultsForInference(pQueryJPD, slice);
 	//pQueryJPD->Dump();
     }
-    
+
     //Create fixed-lag smoothing (online)
     int lag = 2;
     pInfEng->DefineProcedure( ptFixLagSmoothing, lag );
@@ -118,13 +118,13 @@ int main()
         pInfEng->EnterEvidence( &(pEvidences[slice]), 1 );
     }
     std::cout << " Results of fixed-lag smoothing " << std::endl;
-    
+
     pInfEng->FixLagSmoothing( slice );
     pInfEng->MarginalNodes( queryPrior, queryPriorSize );
     pQueryJPD = pInfEng->GetQueryJPD();
     ShowResultsForInference(pQueryJPD, slice);
     //pQueryJPD->Dump();
-    
+
     std::cout << std::endl;
 
     for( ; slice < nTimeSlices; slice++ )
@@ -136,34 +136,44 @@ int main()
         ShowResultsForInference(pQueryJPD, slice);
 	//pQueryJPD->Dump();
     }
-    
+
     delete pInfEng;
-    
+
     for( slice = 0; slice < nTimeSlices; slice++)
     {
         delete pEvidences[slice];
     }
-    
+
     //Create learning procedure for DBN
     pEvidencesVecVector evidencesOut;
-    
-    
+
+
     const int nTimeSeries = 500;
+    printf("nTimeSlices: %d\n", nTimeSlices);
     intVector nSlices(nTimeSeries);
+    printf("nSlices_len: %d\n", nSlices.size());
     //define number of slices in the every time series
     pnlRand(nTimeSeries, &nSlices.front(), 3, 20);
+    printf("nSlices_len: %d\n", nSlices.size());
+    for(int i=0; i<10; i++){
+        printf("%d ", nSlices[i]);
+    }
+    printf("]\n");
+    printf("es_len: %d\n", nSlices.size());
     // Generate evidences in a random way
     pArHMM->GenerateSamples( &evidencesOut, nSlices);
-        
+    printf("v1: %d\n", evidencesOut.size());
+    printf("v2: %d\n", evidencesOut[0].size());
+
     // Create DBN for learning
     CDBN *pDBN = CDBN::Create(pnlExCreateRndArHMM());
-    
+
     // Create learning engine
     CEMLearningEngineDBN *pLearn = CEMLearningEngineDBN::Create( pDBN );
-    
+
     // Set data for learning
     pLearn->SetData( evidencesOut );
-    
+
     // Start learning
     try
     {
@@ -173,23 +183,23 @@ int main()
     {
         std::cout << except.GetMessage() << std::endl;
     }
-    
+
     std::cout<<"Leraning procedure"<<std::endl;
-    
+
     const CCPD *pCPD1, *pCPD2;
     for( i = 0; i < 4; i++ )
     {
         std::cout<<" initial model"<<std::endl;
         pCPD1 = static_cast<const CCPD*>( pArHMM->GetFactor(i) );
         ShowCPD( pCPD1 );
-	
-        
+
+
 	std::cout<<" model after learning"<<std::endl;
         pCPD2 = static_cast<const CCPD*>( pDBN->GetFactor(i) );
 	ShowCPD( pCPD2 );
-        
+
     }
-    
+
     for( i = 0; i < evidencesOut.size(); i++ )
     {
         int j;
@@ -211,17 +221,17 @@ void ShowResultsForInference(const CPotential * pQueryPot, int slice)
     const int* domain;
     pQueryPot->GetDomain( &nnodes, &domain );
     std::cout<<" probability distribution for nodes [ ";
-    
-    int i;	
+
+    int i;
     for( i = 0; i < nnodes; i++ )
     {
 	std::cout<<domain[i]<<" ";
     }
-    
-    
+
+
     std::cout<<"] at slice "<<slice<<std::endl;
     CMatrix<float>* pMat = pQueryPot->GetMatrix(matTable);
-    
+
     // graphical model hase been created using dense matrix
     // so, the marginal is also dense
     EMatrixClass type = pMat->GetMatrixClass();
@@ -229,7 +239,7 @@ void ShowResultsForInference(const CPotential * pQueryPot, int slice)
     {
 	assert(0);
     }
-    
+
     int nEl;
     const float* data;
     static_cast<CNumericDenseMatrix<float>*>(pMat)->GetRawData(&nEl, &data);
@@ -246,24 +256,24 @@ void ShowCPD( const CCPD* pCPD )
     const int* domain;
     pCPD->GetDomain( &nnodes, &domain );
     std::cout<<" node "<<domain[nnodes -1]<<" hase the parents ";
-    
-    int i;	
+
+    int i;
     for( i = 0; i < nnodes - 1; i++ )
     {
 	std::cout<<domain[i]<<" ";
     }
-    
+
     std::cout<<std::endl;
     CMatrix<float>* pMat = pCPD->GetMatrix(matTable);
-    
+
     // graphical model hase been created using dense matrix
-    
+
     EMatrixClass type = pMat->GetMatrixClass();
     if( ! ( type == mcDense || type == mcNumericDense || type == mc2DNumericDense ) )
     {
 	assert(0);
     }
-    
+
     std::cout<<" conditional probability distribution \n";
     int nEl;
     const float* data;
@@ -275,4 +285,3 @@ void ShowCPD( const CCPD* pCPD )
 
     std::cout<<std::endl<<std::endl;
 }
-

@@ -3,8 +3,7 @@ check_PROGRAMS = tests_pnl_c
 
 include $(top_srcdir)/Makefile.incl
 
-INCLUDES = $(PNL_INCL) -I$(srcdir)/../include -I$(top_srcdir)/trs/include
-
+tests_pnl_c_CFLAGS = $(PNL_INCL) -I$(srcdir)/../include -I$(top_srcdir)/trs/include
 tests_pnl_c_SOURCES =     \
      A1_5JTreeInfDBNCondGauss.cpp     \
      A2TPFInfDBN.cpp     \

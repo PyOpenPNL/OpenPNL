@@ -7,11 +7,11 @@ include $(top_srcdir)/Makefile.incl
 SOMAJOR=@PNLMAJOR@
 SOMINOR=@PNLMINOR@
 SOSUBMINOR=@PNLSUBMINOR@
-INCLUDES=$(PNL_INCL)
 
 
 lib_LTLIBRARIES=libpnl.la
 
+libpnl_la_CFLAGS=$(PNL_INCL)
 libpnl_la_SOURCES=      \
      cvcart.cpp     \
      cvsvd.c     \

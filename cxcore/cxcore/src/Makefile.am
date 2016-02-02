@@ -1,6 +1,6 @@
-lib_LIBRARIES = libcxcore.a
+lib_LTLIBRARIES=libcxcore.la
 
-libcxcore_a_SOURCES = \
+libcxcore_la_SOURCES = \
      cxalloc.cpp     \
      cxarithm.cpp     \
      cxarray.cpp     \
@@ -37,4 +37,4 @@ EXTRA_DIST = _cxcore.h _cxexport.def _cxipp.h
 
 LIBS = -lm
 
-INCLUDES = -I$(srcdir) -I$(srcdir)/../include
+AM_CPPFLAGS = -I$(srcdir) -I$(srcdir)/../include

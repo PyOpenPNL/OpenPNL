@@ -1,0 +1,9 @@
+*.a
+*.o
+*.lo
+*.libs
+*.la
+*.so
+Makefile
+config.log
+config.status

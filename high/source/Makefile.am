@@ -3,10 +3,9 @@ LIBS = -ldl -lm
 
 include $(top_srcdir)/Makefile.incl
 
-INCLUDES = $(PNL_INCL) -I$(srcdir)/../include
-
 lib_LTLIBRARIES = libhigh.la
 
+libhigh_la_CFLAGS = $(PNL_INCL) -I$(srcdir)/../include
 libhigh_la_SOURCES =      \
      BNet.cpp     \
      BNetCB.cpp     \
