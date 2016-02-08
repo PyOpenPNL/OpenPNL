@@ -59,14 +59,14 @@ public:
     virtual void DefineProcedure(EProcedureTypes procedureType, 
         int lag = 0);
 
-#ifndef SWIG
+//#ifndef SWIG
         virtual void MarginalNodes( const int *queryIn, int querySize, 
         int time = 0,  int notExpandJPD = 0 );
 
         
     virtual void EnterEvidence(const CEvidence* const* evidenceIn, 
         int nSlices);
-#endif        
+//#endif        
     virtual const CPotential* GetQueryJPD();
     virtual const CEvidence* GetMPE();
 
