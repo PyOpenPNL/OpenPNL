@@ -3046,9 +3046,9 @@ fi
 
 
 
-CFLAGS+=" -fpermissive "
-CPPFLAGS+=" -fpermissive "
-CXXFLAGS+=" -fpermissive "
+CFLAGS+=" -g -fpermissive "
+CPPFLAGS+=" -g -fpermissive "
+CXXFLAGS+="-g -fpermissive "
 
 ac_ext=c
 ac_cpp='$CPP $CPPFLAGS'

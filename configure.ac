@@ -26,9 +26,9 @@ AC_SUBST(VERSION)
 AC_SUBST(DEBUG)
 
 dnl Directories, compiler options, ...
-CFLAGS+=" -fpermissive "
-CPPFLAGS+=" -fpermissive "
-CXXFLAGS+=" -fpermissive "
+CFLAGS+=" -g -fpermissive "
+CPPFLAGS+=" -g -fpermissive "
+CXXFLAGS+="-g -fpermissive "
 
 dnl Checks for programs
 AC_PROG_CC
