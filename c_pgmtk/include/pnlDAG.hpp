@@ -65,7 +65,6 @@ private:
 	void UpdateAncestorMatrix(int iStartNode, int iEndNode, EDAGChangeType iChangeType); //update ancestor matrix
 	void SetAncesstorMatrix(C2DBitwiseMatrix* pMatrix);
 	void UpdateRemoveNodes(int iNodeNumber);
-	C2DBitwiseMatrix* m_pAncesstorMatrix;
 	void SetDiff(intVector& vA, const intVector &vB); // A = A/B;
 	static int m_iNumberOfRandomUsed;
 	bool CheckValid2(intVector &vNotParents, intVector &vNotChild, EDGEOP op);
@@ -73,6 +72,7 @@ private:
 	static int GetARandomNum(unsigned int nMax);
 	
 public:
+	C2DBitwiseMatrix* m_pAncesstorMatrix;
 #ifdef _PNL_DEBUG_
 	void DumpMatrix();
 #endif
