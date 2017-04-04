@@ -20,6 +20,7 @@
 #include "pnlMatrixIterator.hpp"
 #include "pnlSparseMatrix.hpp"
 #include "pnlFakePtr.hpp"
+#include <stdint.h>
 
 #ifdef PNL_RTTI
 #include "pnlpnlType.hpp"
@@ -943,14 +944,19 @@ CDenseMatrix<Type>::CDenseMatrix( int dim, const int *range, const Type *data,
 {
     m_Range.assign(range, range+dim ) ;
     SetClamp(Clamp);
-    int N = 1;
+    uint64_t N = 1;
     for (int i = 0; i < dim; N = N * range[i], i++ );
+//    for (int i = 0; i < dim; i++){ std::cout << "range "<< i << ", "<< range[i] << "\n"; }
     if ( data != PNL_FAKEPTR( Type ) )
     {
         m_Table.assign( data, data+N );
     }
     else
     {
+        if(N>1000000000){
+            std::cout << "WARNING: N="<<N<<", Allocated very large matrix, try reducing num nodes or cardinality!\n";
+            std::cout << "resizing tabel to: N="<<N<<", "<<N*4/1000000000<<"GB Table\n";
+            }
         m_Table.resize( N );
     }
 }
