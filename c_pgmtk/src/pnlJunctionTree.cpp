@@ -42,7 +42,7 @@ static inline bool IsNodeObserved( int nodeToCheck,
 //////////////////////////////////////////////////////////////////////////
 
 // this is an OBSOLETE Create function
-CJunctionTree* CJunctionTree::Create( const CStaticGraphicalModel *pGrModel, 
+CJunctionTree* CJunctionTree::Create2( const CStaticGraphicalModel *pGrModel, 
                                       int numOfSubGrToConnect,
                                       const int *subGrToConnectSizes,
                                       const int **subGrToConnect )

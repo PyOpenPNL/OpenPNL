@@ -34,7 +34,7 @@ public:
 
 #ifdef PNL_OBSOLETE    
     /* function of jtree model creation from either BNet, MNet or MRF2 */
-    static CJunctionTree* Create( const CStaticGraphicalModel *pGrModel,
+    static CJunctionTree* Create2( const CStaticGraphicalModel *pGrModel,
                                   int numOfSubGrToConnect = 0,
                                   const int *subGrToConnectSizes = NULL,
                                   const int **subGrToConnect = NULL );

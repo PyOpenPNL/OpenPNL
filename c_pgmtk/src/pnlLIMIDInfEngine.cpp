@@ -68,7 +68,7 @@ void CLIMIDInfEngine::Release(CLIMIDInfEngine** pInfEng)
 CLIMIDInfEngine::CLIMIDInfEngine(const CStaticGraphicalModel *pOldGM, 
   const CStaticGraphicalModel *pNewGM, intVector& vec_association):
   m_Paths(0), m_Association(vec_association), 
-  m_pJTree(CJunctionTree::Create(pNewGM, 0, NULL, NULL)),
+  m_pJTree(CJunctionTree::Create2(pNewGM, 0, NULL, NULL)),
   m_decisionNodesOfClqs(0), m_cliquesContDecisionNodes(0), m_IterMax(10)
 {
   m_pIDNet = static_cast <const CIDNet*> (pNewGM);

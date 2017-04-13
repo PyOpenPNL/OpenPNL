@@ -104,7 +104,7 @@ CJtreeInfEngine::CJtreeInfEngine( const CStaticGraphicalModel
 				 const int *SubGrToConnectSizes, 
 				 const int **SubgrToConnect )
 				 : CInfEngine( itJtree, pGraphicalModel ),
-				 m_pOriginalJTree(CJunctionTree::Create(
+				 m_pOriginalJTree(CJunctionTree::Create2(
 				 pGraphicalModel, numOfSubGrToConnect, 
 				 SubGrToConnectSizes, SubgrToConnect )),
 				 m_pJTree(NULL),// m_pEvidence(NULL),
